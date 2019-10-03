@@ -1,0 +1,10 @@
+Note : Remplate "Table" inside [...] with the name of the table you want to delete
+
+What to delete to remove bake :
+../src/Controller/[TableController]
+../src/Model/Entity/[Table]
+../src/Model/Table/[Table]
+../src/Template/Table
+../tests/Fixture/[TableFixture]
+../tests/TestCase/Controller/[TableControllerTest]
+../tests/TestCase/Model/Table/[TableTest]
