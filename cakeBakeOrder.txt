@@ -1,4 +1,5 @@
 cake bake all languages
+cake bake all roles
 cake bake all users
 cake bake all games
 cake bake all games_users
