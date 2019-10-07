@@ -22,6 +22,7 @@ class UsersControllerTest extends TestCase
     public $fixtures = [
         'app.Users',
         'app.Languages',
+        'app.Roles',
         'app.Games',
         'app.GamesUsers'
     ];

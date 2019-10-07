@@ -19,8 +19,8 @@ use Cake\ORM\Entity;
  * @property int $role_id
  * @property \Cake\I18n\FrozenDate $created
  * @property \Cake\I18n\FrozenDate $modified
- *
  * @property \App\Model\Entity\Language $language
+ * @property \App\Model\Entity\Role $role
  * @property \App\Model\Entity\Game[] $games
  */
 class User extends Entity
@@ -47,6 +47,7 @@ class User extends Entity
         'created' => true,
         'modified' => true,
         'language' => true,
+        'role' => true,
         'games' => true
     ];
 

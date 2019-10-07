@@ -43,7 +43,7 @@ class UsersController extends AppController
     public function index()
     {
         $this->paginate = [
-            'contain' => ['Languages']
+            'contain' => ['Languages', 'Roles']
         ];
         $users = $this->paginate($this->Users);
 
@@ -60,7 +60,7 @@ class UsersController extends AppController
     public function view($id = null)
     {
         $user = $this->Users->get($id, [
-            'contain' => ['Languages', 'Games']
+            'contain' => ['Languages', 'Roles', 'Games']
         ]);
 
         $this->set('user', $user);
@@ -84,8 +84,9 @@ class UsersController extends AppController
             $this->Flash->error(__('The user could not be saved. Please, try again.'));
         }
         $languages = $this->Users->Languages->find('list', ['limit' => 200]);
+        $roles = $this->Users->Roles->find('list', ['limit' => 200]);
         $games = $this->Users->Games->find('list', ['limit' => 200]);
-        $this->set(compact('user', 'languages', 'games'));
+        $this->set(compact('user', 'languages', 'roles', 'games'));
     }
 
     /**
@@ -110,8 +111,9 @@ class UsersController extends AppController
             $this->Flash->error(__('The user could not be saved. Please, try again.'));
         }
         $languages = $this->Users->Languages->find('list', ['limit' => 200]);
+        $roles = $this->Users->Roles->find('list', ['limit' => 200]);
         $games = $this->Users->Games->find('list', ['limit' => 200]);
-        $this->set(compact('user', 'languages', 'games'));
+        $this->set(compact('user', 'languages', 'roles', 'games'));
     }
 
     /**

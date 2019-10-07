@@ -16,6 +16,8 @@
         <li><?= $this->Html->link(__('List Users'), ['action' => 'index']) ?></li>
         <li><?= $this->Html->link(__('List Languages'), ['controller' => 'Languages', 'action' => 'index']) ?></li>
         <li><?= $this->Html->link(__('New Language'), ['controller' => 'Languages', 'action' => 'add']) ?></li>
+        <li><?= $this->Html->link(__('List Roles'), ['controller' => 'Roles', 'action' => 'index']) ?></li>
+        <li><?= $this->Html->link(__('New Role'), ['controller' => 'Roles', 'action' => 'add']) ?></li>
         <li><?= $this->Html->link(__('List Games'), ['controller' => 'Games', 'action' => 'index']) ?></li>
         <li><?= $this->Html->link(__('New Game'), ['controller' => 'Games', 'action' => 'add']) ?></li>
     </ul>
@@ -33,7 +35,8 @@
             echo $this->Form->control('phone');
             echo $this->Form->control('address');
             echo $this->Form->control('language_id', ['options' => $languages]);
-            echo $this->Form->control('role_id');
+            echo $this->Form->control('role_id', ['options' => $roles]);
+            echo $this->Form->control('games._ids', ['options' => $games]);
         ?>
     </fieldset>
     <?= $this->Form->button(__('Submit')) ?>

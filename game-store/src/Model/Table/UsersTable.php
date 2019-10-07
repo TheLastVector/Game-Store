@@ -10,7 +10,7 @@ use Cake\Validation\Validator;
  * Users Model
  *
  * @property \App\Model\Table\LanguagesTable&\Cake\ORM\Association\BelongsTo $Languages
- * @property &\Cake\ORM\Association\BelongsTo $Roles
+ * @property \App\Model\Table\RolesTable&\Cake\ORM\Association\BelongsTo $Roles
  * @property \App\Model\Table\GamesTable&\Cake\ORM\Association\BelongsToMany $Games
  *
  * @method \App\Model\Entity\User get($primaryKey, $options = [])
