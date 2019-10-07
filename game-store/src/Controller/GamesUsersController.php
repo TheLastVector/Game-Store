@@ -65,6 +65,24 @@ class GamesUsersController extends AppController
         $this->set(compact('gamesUser', 'users', 'games'));
     }
 
+    public function buy($userId = null)
+    {
+        $user = $this->GamesUsers -> Users ->get($userId);
+        $gamesUser = $this->GamesUsers->newEntity();
+        if ($this->request->is('post')) {
+            $gamesUser = $this->GamesUsers->patchEntity($gamesUser, $this->request->getData());
+            
+            if ($this->GamesUsers->save($gamesUser)) {
+                $this->Flash->success(__('The games user has been saved.'));
+
+                return $this->redirect(['action' => 'index']);
+            }
+            $this->Flash->error(__('The games user could not be saved. Please, try again.'));
+        }
+        $games = $this->GamesUsers->Games->find('list', ['limit' => 200]);
+        $this->set(compact('gamesUser', 'user', 'games'));
+    }
+
     /**
      * Edit method
      *
