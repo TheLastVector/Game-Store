@@ -107,6 +107,7 @@
                 <th scope="col"><?= __('Phone') ?></th>
                 <th scope="col"><?= __('Address') ?></th>
                 <th scope="col"><?= __('Language Id') ?></th>
+                <th scope="col"><?= __('Role Id') ?></th>
                 <th scope="col"><?= __('Created') ?></th>
                 <th scope="col"><?= __('Modified') ?></th>
                 <th scope="col" class="actions"><?= __('Actions') ?></th>
@@ -122,6 +123,7 @@
                 <td><?= h($users->phone) ?></td>
                 <td><?= h($users->address) ?></td>
                 <td><?= h($users->language_id) ?></td>
+                <td><?= h($users->role_id) ?></td>
                 <td><?= h($users->created) ?></td>
                 <td><?= h($users->modified) ?></td>
                 <td class="actions">

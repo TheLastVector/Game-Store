@@ -10,6 +10,7 @@ use Cake\Validation\Validator;
  * Users Model
  *
  * @property \App\Model\Table\LanguagesTable&\Cake\ORM\Association\BelongsTo $Languages
+ * @property &\Cake\ORM\Association\BelongsTo $Roles
  * @property \App\Model\Table\GamesTable&\Cake\ORM\Association\BelongsToMany $Games
  *
  * @method \App\Model\Entity\User get($primaryKey, $options = [])
@@ -43,6 +44,10 @@ class UsersTable extends Table
 
         $this->belongsTo('Languages', [
             'foreignKey' => 'language_id',
+            'joinType' => 'INNER'
+        ]);
+        $this->belongsTo('Roles', [
+            'foreignKey' => 'role_id',
             'joinType' => 'INNER'
         ]);
         $this->belongsToMany('Games', [
@@ -121,6 +126,7 @@ class UsersTable extends Table
         $rules->add($rules->isUnique(['username']));
         $rules->add($rules->isUnique(['email']));
         $rules->add($rules->existsIn(['language_id'], 'Languages'));
+        $rules->add($rules->existsIn(['role_id'], 'Roles'));
 
         return $rules;
     }

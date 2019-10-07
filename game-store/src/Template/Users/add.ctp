@@ -27,6 +27,7 @@
             echo $this->Form->control('phone');
             echo $this->Form->control('address');
             echo $this->Form->control('language_id', ['options' => $languages]);
+            /*echo $this->Form->control('role_id');*/
         ?>
     </fieldset>
     <?= $this->Form->button(__('Submit')) ?>

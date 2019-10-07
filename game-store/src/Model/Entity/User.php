@@ -16,6 +16,7 @@ use Cake\ORM\Entity;
  * @property string $phone
  * @property string $address
  * @property int $language_id
+ * @property int $role_id
  * @property \Cake\I18n\FrozenDate $created
  * @property \Cake\I18n\FrozenDate $modified
  *
@@ -42,6 +43,7 @@ class User extends Entity
         'phone' => true,
         'address' => true,
         'language_id' => true,
+        'role_id' => true,
         'created' => true,
         'modified' => true,
         'language' => true,
@@ -66,5 +68,4 @@ class User extends Entity
             return $hasher->hash($value);
         }
     }
-
 }
