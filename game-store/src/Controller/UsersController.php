@@ -47,7 +47,23 @@ class UsersController extends AppController
         $this->paginate = [
             'contain' => ['Languages', 'Roles']
         ];
-        $users = $this->paginate($this->Users);
+
+        // Administrator
+        if ($this->Auth->user('role_id') === 1) {
+            $informations = $this->Users;
+        }
+
+        // Staff
+        if ($this->Auth->user('role_id') === 2) {
+            $informations = $this->Users;
+        }
+
+        // Client
+        if ($this->Auth->user('role_id') === 3) {
+            $informations = $this->Users->find('all')->where(['users.id' => $this->Auth->user('id')]);
+        }
+
+        $users = $this->paginate($informations);
 
         $this->set(compact('users'));
     }
@@ -142,6 +158,7 @@ class UsersController extends AppController
     public function isAuthorized($user)
     {
         $action = $this->request->getParam('action');
+        $param = $this->request->getParam('pass.0');
 
         // Administrator
         if ($user['role_id'] === 1) {
@@ -158,8 +175,8 @@ class UsersController extends AppController
         }
 
         // Client
-        if ($user['role_id'] === 3) {
-            if (in_array($action, ['index', 'view', 'add'])) {
+        if ($user['role_id'] === 3) { 
+            if (in_array($action, ['view']) && $param == $user['id']){
                 return true;
             }
         }
