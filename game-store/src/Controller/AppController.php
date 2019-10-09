@@ -48,6 +48,13 @@ class AppController extends Controller
 
         // For the login
         $this->loadComponent('Auth', [
+            /*
+            * Indique à AuthComponent que nous voulons utiliser les méthodes de hooks des controllers pour gérer l’authorization
+            */
+            'authorize'=> 'Controller',
+            /*
+            * Indique à AuthComponent qu'un authentification est nécessaire en utilisant les champs utilisateur : email et password
+            */
             'authenticate' => [
                 'Form' => [
                     'fields' => [
@@ -73,5 +80,11 @@ class AppController extends Controller
          * see https://book.cakephp.org/3.0/en/controllers/components/security.html
          */
         //$this->loadComponent('Security');
+    }
+
+    public function isAuthorized($user)
+    {
+        // Par défaut, on refuse l'accès.
+        return false;
     }
 }

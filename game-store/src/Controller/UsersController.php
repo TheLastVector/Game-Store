@@ -23,7 +23,9 @@ class UsersController extends AppController
             $user = $this->Auth->identify();
             if ($user) {
                 $this->Auth->setUser($user);
-                return $this->redirect($this->Auth->redirectUrl());
+
+                return $this->redirect(['controller' => 'Users' , 'action' => 'index']);
+                /*return $this->redirect($this->Auth->redirectUrl());*/
             }
             $this->Flash->error('Your username or password is incorrect.');
         }
@@ -79,7 +81,8 @@ class UsersController extends AppController
             if ($newUser = $this->Users->save($user)) {
                 $this->Flash->success(__('The user has been saved.'));
 
-                return $this->redirect(['controller' => 'GamesUsers' , 'action' => 'buy', $newUser -> id]);
+                return $this->redirect(['action' => 'index']);
+                /*return $this->redirect(['controller' => 'GamesUsers' , 'action' => 'buy', $newUser -> id]);*/
             }
             $this->Flash->error(__('The user could not be saved. Please, try again.'));
         }
@@ -134,5 +137,40 @@ class UsersController extends AppController
         }
 
         return $this->redirect(['action' => 'index']);
+    }
+
+    public function isAuthorized($user)
+    {
+        $action = $this->request->getParam('action');
+
+        // Administrator
+        if ($user['role_id'] === 1) {
+            if (in_array($action, ['index', 'view', 'add', 'edit', 'delete'])) {
+                return true;
+            }
+        }
+
+        // Staff
+        if ($user['role_id'] === 2) {
+            if (in_array($action, ['index', 'view', 'add', 'edit', 'delete'])) {
+                return true;
+            }
+        }
+
+        // Client
+        if ($user['role_id'] === 3) {
+            if (in_array($action, ['index', 'view', 'add'])) {
+                return true;
+            }
+        }
+
+        // Visitor
+        if ($user['role_id'] === 4) {
+            if (in_array($action, ['index', 'add'])) {
+                return true;
+            }
+        }
+
+        return false;
     }
 }
