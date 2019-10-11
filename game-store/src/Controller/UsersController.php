@@ -24,7 +24,7 @@ class UsersController extends AppController
             if ($user) {
                 $this->Auth->setUser($user);
 
-                return $this->redirect(['controller' => 'Users' , 'action' => 'index']);
+                return $this->redirect(['controller' => 'Users' , 'action' => 'view', $user['id']]);
                 /*return $this->redirect($this->Auth->redirectUrl());*/
             }
             $this->Flash->error('Your username or password is incorrect.');
@@ -166,26 +166,19 @@ class UsersController extends AppController
                 return true;
             }
         }
-
-        // Staff
-        if ($user['role_id'] === 2) {
+        // Staff 
+        else if ($user['role_id'] === 2) {
             if (in_array($action, ['index', 'view', 'add', 'edit', 'delete'])) {
                 return true;
             }
         }
-
         // Client
-        if ($user['role_id'] === 3) { 
+        else if ($user['role_id'] === 3) { 
             if (in_array($action, ['view', 'edit']) && $param == $user['id']){
                 return true;
             }
-        }
-
-        // Visitor
-        if ($user['role_id'] === 4) {
-            if (in_array($action, ['index', 'add'])) {
-                return true;
-            }
+        }else {
+            
         }
 
         return false;

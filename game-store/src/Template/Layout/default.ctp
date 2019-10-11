@@ -53,6 +53,14 @@ $cakeDescription = 'CakePHP: the rapid development php framework';
                         }
                     ?>
                 </li>
+                <li>
+                    <?php
+                        $userIsLogged = $this->request->getSession()->read('Auth.User');
+                        if (!$userIsLogged) {
+                            echo $this->Html->link('Sign up', ['controller' => 'Users', 'action' => 'add']);
+                        }
+                    ?>
+                </li>
             </ul>
         </div>
     </nav>
