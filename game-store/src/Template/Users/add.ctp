@@ -6,7 +6,7 @@
 ?>
 <nav class="large-3 medium-4 columns" id="actions-sidebar">
     <ul class="side-nav">
-        <li class="heading"><?= __('Actions') ?></li>
+        <li class="heading"><?= __('Menu') ?></li>
         <li><?= $this->Html->link(__('List Users'), ['action' => 'index']) ?></li>
         <li><?= $this->Html->link(__('List Languages'), ['controller' => 'Languages', 'action' => 'index']) ?></li>
         <li><?= $this->Html->link(__('New Language'), ['controller' => 'Languages', 'action' => 'add']) ?></li>
@@ -19,7 +19,7 @@
 <div class="users form large-9 medium-8 columns content">
     <?= $this->Form->create($user) ?>
     <fieldset>
-        <legend><?= __('Add User') ?></legend>
+        <legend><?= __('Sign up') ?></legend>
         <?php
             echo $this->Form->control('username');
             echo $this->Form->control('password');
@@ -29,8 +29,6 @@
             echo $this->Form->control('phone');
             echo $this->Form->control('address');
             echo $this->Form->control('language_id', ['options' => $languages]);
-            echo $this->Form->control('role_id', ['options' => $roles]);
-            echo $this->Form->control('games._ids', ['options' => $games]);
         ?>
     </fieldset>
     <?= $this->Form->button(__('Submit')) ?>

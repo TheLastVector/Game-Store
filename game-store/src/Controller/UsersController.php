@@ -176,7 +176,7 @@ class UsersController extends AppController
 
         // Client
         if ($user['role_id'] === 3) { 
-            if (in_array($action, ['view']) && $param == $user['id']){
+            if (in_array($action, ['view', 'edit']) && $param == $user['id']){
                 return true;
             }
         }
