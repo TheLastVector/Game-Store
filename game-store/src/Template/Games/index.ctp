@@ -54,7 +54,7 @@
                 <td><?= $this->Number->format($game->price) ?> $</td>
                 <td><?= $this->Number->format($game->number_of_players) ?></td>
                 <td><?= h($game->description) ?></td>
-                <td><?= $this->Number->format($game->release_date) ?></td>
+                <td><?= h($game->release_date) ?></td>
                 <td class="actions">
                     <?= $this->Html->link(__('View'), ['action' => 'view', $game->id]) ?>
                     <?= $this->Html->link(__('Edit'), ['action' => 'edit', $game->id]) ?>
