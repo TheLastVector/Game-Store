@@ -12,6 +12,13 @@ use App\Controller\AppController;
  */
 class GamesController extends AppController
 {
+    public function initialize()
+    {
+        parent::initialize();
+        $this->Auth->allow(['index']);
+        /*$this->Auth->deny(['index']);*/
+    }
+
     /**
      * Index method
      *

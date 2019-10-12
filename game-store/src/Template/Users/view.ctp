@@ -7,20 +7,36 @@
 <nav class="large-3 medium-4 columns" id="actions-sidebar">
     <ul class="side-nav">
         <li class="heading"><?= __('Menu') ?></li>
-        <li><?= $this->Html->link(__('Edit User'), ['action' => 'edit', $user->id]) ?> </li>
-        <li><?= $this->Form->postLink(__('Delete User'), ['action' => 'delete', $user->id], ['confirm' => __('Are you sure you want to delete # {0}?', $user->id)]) ?> </li>
-        <li><?= $this->Html->link(__('List Users'), ['action' => 'index']) ?> </li>
-        <li><?= $this->Html->link(__('Sign up'), ['action' => 'add']) ?> </li>
-        <li><?= $this->Html->link(__('List Languages'), ['controller' => 'Languages', 'action' => 'index']) ?> </li>
-        <li><?= $this->Html->link(__('New Language'), ['controller' => 'Languages', 'action' => 'add']) ?> </li>
-        <li><?= $this->Html->link(__('List Roles'), ['controller' => 'Roles', 'action' => 'index']) ?> </li>
-        <li><?= $this->Html->link(__('New Role'), ['controller' => 'Roles', 'action' => 'add']) ?> </li>
-        <li><?= $this->Html->link(__('List Games'), ['controller' => 'Games', 'action' => 'index']) ?> </li>
-        <li><?= $this->Html->link(__('New Game'), ['controller' => 'Games', 'action' => 'add']) ?> </li>
+        <?php 
+            $loggedUser = $this->request->getSession()->read('Auth.User');
+            if ($loggedUser['role_id'] === 1) {
+                echo '<li>' . $this->Html->link(__('Add a new user'), ['action' => 'add']) . '</li>';
+                echo '<li>' . $this->Html->link(__('List all users'), ['action' => 'index']) . '</li>';
+                echo '<li>' . $this->Html->link(__('Add a new game'), ['controller' => 'Games', 'action' => 'add']) . '</li>';
+                echo '<li>' . $this->Html->link(__('List Games'), ['controller' => 'Games', 'action' => 'index']) . '</li>';
+                echo '<li>' . $this->Html->link(__('Add a new Role'), ['controller' => 'Roles', 'action' => 'add']) . '</li>';
+                echo '<li>' . $this->Html->link(__('List all roles'), ['controller' => 'Roles', 'action' => 'index']) . '</li>';
+                echo '<li>' . $this->Html->link(__('Add a new language'), ['controller' => 'Languages', 'action' => 'add']) . '</li>';
+                echo '<li>' . $this->Html->link(__('List all languages'), ['controller' => 'Languages', 'action' => 'index']) . '</li>';
+            } else {
+                echo '<li>' . $this->Html->link(__('Shop'), ['controller' => 'Games', 'action' => 'index']) . '</li>';
+            }
+        ?>
     </ul>
 </nav>
 <div class="users view large-9 medium-8 columns content">
-    <h3><?= h($user->id) ?></h3>
+    <h3>
+        <?php
+            $loggedUser = $this->request->getSession()->read('Auth.User');
+            if ($loggedUser['id'] === $user->id) {
+                echo 'My account';
+            }else {
+                echo $user->username;
+            }
+        ?>
+        <?= $this->Html->link(__('[Edit]'), ['action' => 'edit', $user->id]) ?>
+        <?= $this->Form->postLink(__('[Delete]'), ['action' => 'delete', $user->id], ['confirm' => __('Are you sure you want to delete # {0}?', $user->id)]) ?> </li>
+    </h3>
     <table class="vertical-table">
         <tr>
             <th scope="row"><?= __('Username') ?></th>
@@ -48,7 +64,7 @@
         </tr>
         <tr>
             <th scope="row"><?= __('Language') ?></th>
-            <td><?= $user->has('language') ? $this->Html->link($user->language->name, ['controller' => 'Languages', 'action' => 'view', $user->language->id]) : '' ?></td>
+            <td><?= h($user->language->name) ?></td>
         </tr>
     </table>
     <div class="related">

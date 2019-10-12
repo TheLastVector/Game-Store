@@ -6,14 +6,32 @@
 ?>
 <nav class="large-3 medium-4 columns" id="actions-sidebar">
     <ul class="side-nav">
-        <li class="heading"><?= __('Actions') ?></li>
-        <li><?= $this->Html->link(__('New Game'), ['action' => 'add']) ?></li>
-        <li><?= $this->Html->link(__('List Platforms'), ['controller' => 'Platforms', 'action' => 'index']) ?></li>
-        <li><?= $this->Html->link(__('New Platform'), ['controller' => 'Platforms', 'action' => 'add']) ?></li>
-        <li><?= $this->Html->link(__('List Tags'), ['controller' => 'Tags', 'action' => 'index']) ?></li>
-        <li><?= $this->Html->link(__('New Tag'), ['controller' => 'Tags', 'action' => 'add']) ?></li>
-        <li><?= $this->Html->link(__('List Users'), ['controller' => 'Users', 'action' => 'index']) ?></li>
-        <li><?= $this->Html->link(__('New User'), ['controller' => 'Users', 'action' => 'add']) ?></li>
+        <li class="heading"><?= __('Menu') ?></li>
+        <?php 
+            $loggedUser = $this->request->getSession()->read('Auth.User');
+            // Administrator & Staff
+            if ($loggedUser['role_id'] === 1 || $loggedUser['role_id'] === 2) {
+                echo '<li>' . $this->Html->link(__('Add a new game'), ['action' => 'add']) . '</li>';
+                echo '<li>' . $this->Html->link(__('Add a new user'), ['controller' => 'Users', 'action' => 'add']) . '</li>';
+                echo '<li>' . $this->Html->link(__('List all users'), ['controller' => 'Users', 'action' => 'index']) . '</li>';
+                echo '<li>' . $this->Html->link(__('Add a new tag'), ['controller' => 'Tags', 'action' => 'add']) . '</li>';
+                echo '<li>' . $this->Html->link(__('List all tags'), ['controller' => 'Tags', 'action' => 'index']) . '</li>';
+                echo '<li>' . $this->Html->link(__('Add a new platform'), ['controller' => 'Platforms', 'action' => 'add']) . '</li>';
+                echo '<li>' . $this->Html->link(__('List all platforms'), ['controller' => 'Platforms', 'action' => 'index']) . '</li>';
+                echo '<li>' . $this->Html->link(__('Add a new Role'), ['controller' => 'Roles', 'action' => 'add']) . '</li>';
+                echo '<li>' . $this->Html->link(__('List all roles'), ['controller' => 'Roles', 'action' => 'index']) . '</li>';
+                echo '<li>' . $this->Html->link(__('Add a new language'), ['controller' => 'Languages', 'action' => 'add']) . '</li>';
+                echo '<li>' . $this->Html->link(__('List all languages'), ['controller' => 'Languages', 'action' => 'index']) . '</li>';
+            } 
+            // Client
+            else if ($loggedUser['role_id'] === 3) {
+                echo '<li>' . $this->Html->link(__('My account'), ['controller' => 'Users', 'action' => 'view', $loggedUser['id']]) . '</li>';
+            }
+            // Visitor
+            else {
+
+            }
+        ?>
     </ul>
 </nav>
 <div class="games index large-9 medium-8 columns content">
@@ -21,7 +39,6 @@
     <table cellpadding="0" cellspacing="0">
         <thead>
             <tr>
-                <th scope="col"><?= $this->Paginator->sort('id') ?></th>
                 <th scope="col"><?= $this->Paginator->sort('name') ?></th>
                 <th scope="col"><?= $this->Paginator->sort('price') ?></th>
                 <th scope="col"><?= $this->Paginator->sort('number_of_players') ?></th>
@@ -33,9 +50,8 @@
         <tbody>
             <?php foreach ($games as $game): ?>
             <tr>
-                <td><?= $this->Number->format($game->id) ?></td>
                 <td><?= h($game->name) ?></td>
-                <td><?= $this->Number->format($game->price) ?></td>
+                <td><?= $this->Number->format($game->price) ?> $</td>
                 <td><?= $this->Number->format($game->number_of_players) ?></td>
                 <td><?= h($game->description) ?></td>
                 <td><?= $this->Number->format($game->release_date) ?></td>

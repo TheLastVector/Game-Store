@@ -37,30 +37,38 @@ $cakeDescription = 'CakePHP: the rapid development php framework';
     <nav class="top-bar expanded" data-topbar role="navigation">
         <ul class="title-area large-3 medium-4 columns">
             <li class="name">
-                <h1><a href=""><?= $this->fetch('title') ?></a></h1>
+                <!-- <h1><a href=""><?= $this->fetch('title') ?></a></h1> -->
             </li>
         </ul>
         <div class="top-bar-section">
             <ul class="right">
-                <li>
-                    <?php
-                        $loguser = $this->request->getSession()->read('Auth.User');
-                        if ($loguser) {
-                            $user = $loguser['email'];
-                            echo $this->Html->link($user . ' logout', ['controller' => 'Users', 'action' => 'logout']);
-                        } else {
-                            echo $this->Html->link('login', ['controller' => 'Users', 'action' => 'login']);
+                <?php
+                    $loguser = $this->request->getSession()->read('Auth.User');
+                    if ($loguser) {
+                        $user = $loguser['username'];
+                        echo '<li>' . $this->Html->link('Home', ['controller' => 'Games', 'action' => 'index']) . '</li>';
+                        echo '<li>' . $this->Html->link($user, ['controller' => 'Users', 'action' => 'view', $loguser['id']]) . '</li>';
+                        echo '<li>' . $this->Html->link('logout', ['controller' => 'Users', 'action' => 'logout']) . '</li>';
+                    } else {
+                        echo '<li>' . $this->Html->link('Home', ['controller' => 'Games', 'action' => 'index']) . '</li>';
+                        
+                        if ($this->request->here !== '/Game-Store/game-store/users/login') {
+                            echo '<li>' . $this->Html->link('Login', ['controller' => 'Users', 'action' => 'login']) . '</li>';
                         }
-                    ?>
-                </li>
-                <li>
-                    <?php
-                        $userIsLogged = $this->request->getSession()->read('Auth.User');
-                        if (!$userIsLogged) {
-                            echo $this->Html->link('Sign up', ['controller' => 'Users', 'action' => 'add']);
+
+                        if ($this->request->here !== '/Game-Store/game-store/users/sign-up') {
+                            echo '<li>' . $this->Html->link('Sign up', ['controller' => 'Users', 'action' => 'signUp']) . '</li>';
                         }
+                    }
+                ?>
+                <!-- <li>
+                    <?php 
+                        if ($this->request->here === '/Game-Store/game-store/users/login') {
+                            echo 'It\'s inside.';
+                        }
+                        echo $this->request->here 
                     ?>
-                </li>
+                </li> -->
             </ul>
         </div>
     </nav>

@@ -15,7 +15,32 @@ class UsersController extends AppController
     public function initialize()
     {
         parent::initialize();
-        $this->Auth->allow(['logout', 'add']);
+        $this->Auth->allow(['logout', 'signUp']);
+        $this->Auth->deny(['index']);
+    }
+
+    /**
+     * Sign up method
+     *
+     * @return \Cake\Http\Response|null Redirects on successful sign up, renders view otherwise.
+     */
+    public function signUp()
+    {
+        $user = $this->Users->newEntity();
+        if ($this->request->is('post')) {
+            $user = $this->Users->patchEntity($user, $this->request->getData());
+            if ($newUser = $this->Users->save($user)) {
+                $this->Flash->success(__('You have successfully signed up. Login to acces your account.'));
+
+                return $this->redirect(['action' => 'login']);
+                /*return $this->redirect(['controller' => 'GamesUsers' , 'action' => 'buy', $newUser -> id]);*/
+            }
+            $this->Flash->error(__('The user could not be saved. Please, try again.'));
+        }
+        $languages = $this->Users->Languages->find('list', ['limit' => 200]);
+        $roles = $this->Users->Roles->find('list', ['limit' => 200]);
+        $games = $this->Users->Games->find('list', ['limit' => 200]);
+        $this->set(compact('user', 'languages', 'roles', 'games'));
     }
 
     public function login() {
@@ -48,20 +73,7 @@ class UsersController extends AppController
             'contain' => ['Languages', 'Roles']
         ];
 
-        // Administrator
-        if ($this->Auth->user('role_id') === 1) {
-            $informations = $this->Users;
-        }
-
-        // Staff
-        if ($this->Auth->user('role_id') === 2) {
-            $informations = $this->Users;
-        }
-
-        // Client
-        if ($this->Auth->user('role_id') === 3) {
-            $informations = $this->Users->find('all')->where(['users.id' => $this->Auth->user('id')]);
-        }
+        $informations = $this->Users;
 
         $users = $this->paginate($informations);
 
@@ -178,7 +190,7 @@ class UsersController extends AppController
                 return true;
             }
         }else {
-            
+            return false;
         }
 
         return false;
