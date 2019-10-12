@@ -56,9 +56,21 @@
                 <td><?= h($game->description) ?></td>
                 <td><?= h($game->release_date) ?></td>
                 <td class="actions">
-                    <?= $this->Html->link(__('View'), ['action' => 'view', $game->id]) ?>
-                    <?= $this->Html->link(__('Edit'), ['action' => 'edit', $game->id]) ?>
-                    <?= $this->Form->postLink(__('Delete'), ['action' => 'delete', $game->id], ['confirm' => __('Are you sure you want to delete # {0}?', $game->id)]) ?>
+                    <?php 
+                        $loggedUser = $this->request->getSession()->read('Auth.User');
+
+                        if ($loggedUser['role_id'] === 1 || $loggedUser['role_id'] === 2) {
+                            echo $this->Html->link(__('[More details]'), ['action' => 'view', $game->id]);
+                            echo ' ';
+                            echo $this->Html->link(__('[Edit]'), ['action' => 'edit', $game->id]);
+                            echo ' ';
+                            echo $this->Form->postLink(__('[Delete]'), ['action' => 'delete', $game->id], ['confirm' => __('Are you sure you want to delete # {0}?', $game->id)]);
+                        } else if ($loggedUser['role_id'] === 3) {
+                            echo $this->Html->link(__('[More details]'), ['action' => 'view', $game->id]);
+                        } else {
+                            echo $this->Html->link(__('[More details]'), ['action' => 'view', $game->id]);
+                        }
+                    ?>
                 </td>
             </tr>
             <?php endforeach; ?>
