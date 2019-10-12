@@ -52,21 +52,21 @@ $cakeDescription = 'CakePHP: the rapid development php framework';
                     } else {
                         echo '<li>' . $this->Html->link('Home', ['controller' => 'Games', 'action' => 'index']) . '</li>';
                         
-                        if ($this->request->here !== '/Game-Store/game-store/users/login') {
+                        if ($this->request->getAttribute("here") !== '/Game-Store/game-store/users/login') {
                             echo '<li>' . $this->Html->link('Login', ['controller' => 'Users', 'action' => 'login']) . '</li>';
                         }
 
-                        if ($this->request->here !== '/Game-Store/game-store/users/sign-up') {
+                        if ($this->request->getAttribute("here") !== '/Game-Store/game-store/users/sign-up') {
                             echo '<li>' . $this->Html->link('Sign up', ['controller' => 'Users', 'action' => 'signUp']) . '</li>';
                         }
                     }
                 ?>
                 <!-- <li>
                     <?php 
-                        if ($this->request->here === '/Game-Store/game-store/users/login') {
+                        if ($this->request->getAttribute("here") === '/Game-Store/game-store/users/login') {
                             echo 'It\'s inside.';
                         }
-                        echo $this->request->here 
+                        echo $this->request->getAttribute("here") 
                     ?>
                 </li> -->
             </ul>
