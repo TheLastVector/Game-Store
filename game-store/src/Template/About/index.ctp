@@ -1,13 +1,15 @@
 <div style="text-align:center;">
-    <h3><u>Nom</u> : Isaac David Zolana</h3>
-    <h4><u>Cours</u> :</h4>
+    <h3><strong><u>Nom</u></strong> :
+    <br>
+    Isaac David Zolana</h3>
+    <h4><strong><u>Cours</u></strong> :</h4>
     <h5>
         420-5B7 MO Applications internet.
         <br>
         Automne 2019, Collège Montmorency.
     </h5>
 
-    <p><u>Étapes d'utilisation</u> :</p>
+    <p><strong><u>Étapes d'utilisation</u></strong> :</p>
     <p>
         1- Se connecter [cliquer sur login dans le menu du coin supérieur droit], sinon se créer un compte [cliquer sur sign up] et ensuite se connecter [cliquer sur le bouton jaune login].
         <br>
