@@ -104,7 +104,7 @@ class GamesUsersController extends AppController
             if ($this->GamesUsers->save($gamesUser)) {
                 $this->Flash->success(__('The games user has been saved.'));
 
-                return $this->redirect(['action' => 'index']);
+                return $this->redirect(['controller' => 'Users', 'action' => 'view', $gamesUser->user_id]);
             }
             $this->Flash->error(__('The games user could not be saved. Please, try again.'));
         }

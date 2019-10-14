@@ -48,9 +48,11 @@ $cakeDescription = 'CakePHP: the rapid development php framework';
                         $user = $loguser['username'];
                         echo '<li>' . $this->Html->link('Home', ['controller' => 'Games', 'action' => 'index']) . '</li>';
                         echo '<li>' . $this->Html->link($user, ['controller' => 'Users', 'action' => 'view', $loguser['id']]) . '</li>';
+                        echo '<li>' . $this->Html->link('About', ['controller' => 'About', 'action' => 'index']) . '</li>';
                         echo '<li>' . $this->Html->link('logout', ['controller' => 'Users', 'action' => 'logout']) . '</li>';
                     } else {
                         echo '<li>' . $this->Html->link('Home', ['controller' => 'Games', 'action' => 'index']) . '</li>';
+                        echo '<li>' . $this->Html->link('About', ['controller' => 'About', 'action' => 'index']) . '</li>';
                         
                         if ($this->request->getAttribute("here") !== '/Game-Store/game-store/users/login') {
                             echo '<li>' . $this->Html->link('Login', ['controller' => 'Users', 'action' => 'login']) . '</li>';
