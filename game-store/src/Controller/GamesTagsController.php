@@ -110,4 +110,31 @@ class GamesTagsController extends AppController
 
         return $this->redirect(['action' => 'index']);
     }
+
+    public function isAuthorized($user)
+    {
+        $action = $this->request->getParam('action');
+        $param = $this->request->getParam('pass.0');
+
+        // Administrator
+        if ($user['role_id'] === 1) {
+            if (in_array($action, ['index', 'view', 'add', 'edit', 'delete'])) {
+                return true;
+            }
+        }
+        // Staff 
+        else if ($user['role_id'] === 2) {
+            if (in_array($action, ['index', 'view', 'add', 'edit', 'delete'])) {
+                return true;
+            }
+        }
+        // Client
+        else if ($user['role_id'] === 3) { 
+            return false;
+        }else {
+            return false;
+        }
+
+        return false;
+    }
 }
