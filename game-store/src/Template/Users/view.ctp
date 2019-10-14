@@ -9,15 +9,32 @@
         <li class="heading"><?= __('Menu') ?></li>
         <?php 
             $loggedUser = $this->request->getSession()->read('Auth.User');
-            if ($loggedUser['role_id'] === 1) {
+            if ($loggedUser['role_id'] === 1 || $loggedUser['role_id'] === 2) {
+                // Actions on currect item/element
+                // *Not necessary*
+
+                // Similar to the client
+                echo '<li>' . $this->Html->link(__('Shop'), ['controller' => 'Games', 'action' => 'index']) . '</li>';
+
+                // Basic related actions
                 echo '<li>' . $this->Html->link(__('Add a new user'), ['action' => 'add']) . '</li>';
                 echo '<li>' . $this->Html->link(__('List all users'), ['action' => 'index']) . '</li>';
+
+                // All other actions
                 echo '<li>' . $this->Html->link(__('Add a new game'), ['controller' => 'Games', 'action' => 'add']) . '</li>';
-                echo '<li>' . $this->Html->link(__('List Games'), ['controller' => 'Games', 'action' => 'index']) . '</li>';
+                echo '<li>' . $this->Html->link(__('List all games'), ['controller' => 'Games', 'action' => 'index']) . '</li>';
+
                 echo '<li>' . $this->Html->link(__('Add a new Role'), ['controller' => 'Roles', 'action' => 'add']) . '</li>';
                 echo '<li>' . $this->Html->link(__('List all roles'), ['controller' => 'Roles', 'action' => 'index']) . '</li>';
+
                 echo '<li>' . $this->Html->link(__('Add a new language'), ['controller' => 'Languages', 'action' => 'add']) . '</li>';
                 echo '<li>' . $this->Html->link(__('List all languages'), ['controller' => 'Languages', 'action' => 'index']) . '</li>';
+
+                echo '<li>' . $this->Html->link(__('List all platforms'), ['controller' => 'Platforms', 'action' => 'index']) . '</li>';
+                echo '<li>' . $this->Html->link(__('Add a new platform'), ['controller' => 'Platforms', 'action' => 'add']) . '</li>';
+
+                echo '<li>' . $this->Html->link(__('List all tags'), ['controller' => 'Tags', 'action' => 'index']) . '</li>';
+                echo '<li>' . $this->Html->link(__('Add a new tag'), ['controller' => 'Tags', 'action' => 'add']) . '</li>';
             } else {
                 echo '<li>' . $this->Html->link(__('Shop'), ['controller' => 'Games', 'action' => 'index']) . '</li>';
             }
@@ -35,7 +52,7 @@
             }
         ?>
         <?= $this->Html->link(__('[Edit]'), ['action' => 'edit', $user->id]) ?>
-        <?= $this->Form->postLink(__('[Delete]'), ['action' => 'delete', $user->id], ['confirm' => __('Are you sure you want to delete # {0}?', $user->id)]) ?> </li>
+        <?= $this->Form->postLink(__('[Delete]'), ['action' => 'delete', $user->id], ['confirm' => __('Are you sure you want to delete # {0}?', $user->id)]) ?>
     </h3>
     <table class="vertical-table">
         <tr>
