@@ -15,14 +15,13 @@
     </ul>
 </nav>
 <div class="gamesUsers form large-9 medium-8 columns content">
-    <?php echo $user -> first_name . $user -> last_name ?>
     <?= $this->Form->create($gamesUser) ?>
     <fieldset>
-        <legend><?= __('Add Games User') ?></legend>
+        <legend><?= __('Buy' . ' ' . $game->name . ' ' . '?') ?></legend>
         <?php
-            echo $this->Form->control('game_id', ['options' => $games]);
             echo $this->Form->control('quantity');
             echo $this->Form->hidden('user_id', ['value' => $user -> id]);
+            echo $this->Form->hidden('game_id', ['value' => $game -> id]);
         ?>
     </fieldset>
     <?= $this->Form->button(__('Submit')) ?>

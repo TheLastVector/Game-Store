@@ -47,6 +47,14 @@ class GamesController extends AppController
         $this->set('game', $game);
     }
 
+    public function buy($id = null) {
+        $game = $this->Games->get($id, [
+            'contain' => ['Platforms', 'Tags', 'Users']
+        ]);
+
+        return $this->redirect(['controller' => 'GamesUsers' , 'action' => 'buy', $game -> id]);
+    }
+
     /**
      * Add method
      *
@@ -124,19 +132,19 @@ class GamesController extends AppController
 
         // Administrator
         if ($user['role_id'] === 1) {
-            if (in_array($action, ['index', 'view', 'add', 'edit', 'delete'])) {
+            if (in_array($action, ['index', 'view', 'buy', 'add', 'edit', 'delete'])) {
                 return true;
             }
         }
         // Staff
         else if ($user['role_id'] === 2) {
-            if (in_array($action, ['index', 'view', 'add', 'edit', 'delete'])) {
+            if (in_array($action, ['index', 'view', 'buy', 'add', 'edit', 'delete'])) {
                 return true;
             }
         }
         // Client
         else if ($user['role_id'] === 3) { 
-            if (in_array($action, ['view'])){
+            if (in_array($action, ['view', 'buy'])){
                 return true;
             }
         }else {

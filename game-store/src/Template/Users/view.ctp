@@ -72,9 +72,7 @@
         <?php if (!empty($user->games)): ?>
         <table cellpadding="0" cellspacing="0">
             <tr>
-                <th scope="col"><?= __('Id') ?></th>
                 <th scope="col"><?= __('Name') ?></th>
-                <th scope="col"><?= __('Price') ?></th>
                 <th scope="col"><?= __('Number Of Players') ?></th>
                 <th scope="col"><?= __('Description') ?></th>
                 <th scope="col"><?= __('Release Date') ?></th>
@@ -82,16 +80,27 @@
             </tr>
             <?php foreach ($user->games as $games): ?>
             <tr>
-                <td><?= h($games->id) ?></td>
                 <td><?= h($games->name) ?></td>
-                <td><?= h($games->price) ?></td>
                 <td><?= h($games->number_of_players) ?></td>
                 <td><?= h($games->description) ?></td>
                 <td><?= h($games->release_date) ?></td>
                 <td class="actions">
-                    <?= $this->Html->link(__('View'), ['controller' => 'Games', 'action' => 'view', $games->id]) ?>
-                    <?= $this->Html->link(__('Edit'), ['controller' => 'Games', 'action' => 'edit', $games->id]) ?>
-                    <?= $this->Form->postLink(__('Delete'), ['controller' => 'Games', 'action' => 'delete', $games->id], ['confirm' => __('Are you sure you want to delete # {0}?', $games->id)]) ?>
+                    <?php 
+                        $loggedUser = $this->request->getSession()->read('Auth.User');
+
+                        // Admin and Staff
+                        if ($loggedUser['role_id'] === 1 || $loggedUser['role_id'] === 2) {
+                            echo $this->Html->link(__('[More details]'), ['controller' => 'Games', 'action' => 'view', $games->id]);
+                            echo ' ';
+                            echo $this->Html->link(__('Edit'), ['controller' => 'Games', 'action' => 'edit', $games->id]);
+                            echo ' ';
+                            echo $this->Form->postLink(__('Delete'), ['controller' => 'Games', 'action' => 'delete', $games->id], ['confirm' => __('Are you sure you want to delete # {0}?', $games->id)]);
+                        }
+                        // Client
+                        else if ($loggedUser['role_id'] === 3) {
+                            echo $this->Html->link(__('[More details]'), ['controller' => 'Games', 'action' => 'view', $games->id]);
+                        }
+                    ?>
                 </td>
             </tr>
             <?php endforeach; ?>

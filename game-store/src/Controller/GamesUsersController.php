@@ -12,6 +12,13 @@ use App\Controller\AppController;
  */
 class GamesUsersController extends AppController
 {
+    public function initialize()
+    {
+        parent::initialize();
+        /*$this->Auth->allow(['buy', 'signUp']);*/
+        /*$this->Auth->deny(['']);*/
+    }
+
     /**
      * Index method
      *
@@ -65,7 +72,7 @@ class GamesUsersController extends AppController
         $this->set(compact('gamesUser', 'users', 'games'));
     }
 
-    public function buy($userId = null)
+    /*public function buy($userId = null)
     {
         $user = $this->GamesUsers -> Users ->get($userId);
         $gamesUser = $this->GamesUsers->newEntity();
@@ -81,6 +88,28 @@ class GamesUsersController extends AppController
         }
         $games = $this->GamesUsers->Games->find('list', ['limit' => 200]);
         $this->set(compact('gamesUser', 'user', 'games'));
+    }*/
+
+    public function buy($gameId = null)
+    {
+        $loggedUser = $this->request->getSession()->read('Auth.User');
+
+        $user = $this->GamesUsers->Users->get($loggedUser['id']);
+        $game = $this->GamesUsers->Games->get($gameId);
+        $gamesUser = $this->GamesUsers->newEntity();
+
+        $gamesUser = $this->GamesUsers->newEntity();
+        if ($this->request->is('post')) {
+            $gamesUser = $this->GamesUsers->patchEntity($gamesUser, $this->request->getData());
+            if ($this->GamesUsers->save($gamesUser)) {
+                $this->Flash->success(__('The games user has been saved.'));
+
+                return $this->redirect(['action' => 'index']);
+            }
+            $this->Flash->error(__('The games user could not be saved. Please, try again.'));
+        }
+
+        $this->set(compact('gamesUser', 'user', 'game'));
     }
 
     /**
@@ -127,5 +156,34 @@ class GamesUsersController extends AppController
         }
 
         return $this->redirect(['action' => 'index']);
+    }
+
+    public function isAuthorized($user)
+    {
+        $action = $this->request->getParam('action');
+        $param = $this->request->getParam('pass.0');
+
+        // Administrator
+        if ($user['role_id'] === 1) {
+            if (in_array($action, ['index', 'view', 'buy', 'add', 'edit', 'delete'])) {
+                return true;
+            }
+        }
+        // Staff 
+        else if ($user['role_id'] === 2) {
+            if (in_array($action, ['index', 'view', 'buy', 'add', 'edit', 'delete'])) {
+                return true;
+            }
+        }
+        // Client
+        else if ($user['role_id'] === 3) { 
+            if (in_array($action, ['view', 'buy'])){
+                return true;
+            }
+        }else {
+            return false;
+        }
+
+        return false;
     }
 }
