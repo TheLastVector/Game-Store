@@ -31,12 +31,8 @@
             <td><?= h($game->description) ?></td>
         </tr>
         <tr>
-            <th scope="row"><?= __('Id') ?></th>
-            <td><?= $this->Number->format($game->id) ?></td>
-        </tr>
-        <tr>
             <th scope="row"><?= __('Price') ?></th>
-            <td><?= $this->Number->format($game->price) ?></td>
+            <td><?= $this->Number->format($game->price) ?> $</td>
         </tr>
         <tr>
             <th scope="row"><?= __('Number Of Players') ?></th>
@@ -44,11 +40,11 @@
         </tr>
         <tr>
             <th scope="row"><?= __('Release Date') ?></th>
-            <td><?= $this->Number->format($game->release_date) ?></td>
+            <td><?= h($game->release_date) ?></td>
         </tr>
     </table>
     <div class="related">
-        <h4><?= __('Related Platforms') ?></h4>
+        <h4><?= __('Platforms where you can play') ?></h4>
         <?php if (!empty($game->platforms)): ?>
         <table cellpadding="0" cellspacing="0">
             <tr>
@@ -71,7 +67,7 @@
         <?php endif; ?>
     </div>
     <div class="related">
-        <h4><?= __('Related Tags') ?></h4>
+        <h4><?= __('Tags') ?></h4>
         <?php if (!empty($game->tags)): ?>
         <table cellpadding="0" cellspacing="0">
             <tr>
@@ -94,8 +90,10 @@
         <?php endif; ?>
     </div>
     <div class="related">
-        <h4><?= __('Related Users') ?></h4>
-        <?php if (!empty($game->users)): ?>
+        <h4><?= __('Users who bought it') ?></h4>
+        <?php 
+        $loggedUser = $this->request->getSession()->read('Auth.User');
+        if (!empty($game->users)): ?>
         <table cellpadding="0" cellspacing="0">
             <tr>
                 <th scope="col"><?= __('Id') ?></th>
