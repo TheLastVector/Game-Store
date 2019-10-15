@@ -54,11 +54,11 @@ class GamesTagsController extends AppController
         if ($this->request->is('post')) {
             $gamesTag = $this->GamesTags->patchEntity($gamesTag, $this->request->getData());
             if ($this->GamesTags->save($gamesTag)) {
-                $this->Flash->success(__('The games tag has been saved.'));
+                $this->Flash->success(__('The game has been tagged.'));
 
                 return $this->redirect(['action' => 'index']);
             }
-            $this->Flash->error(__('The games tag could not be saved. Please, try again.'));
+            $this->Flash->error(__('The game could not be tagged. Please, try again.'));
         }
         $games = $this->GamesTags->Games->find('list', ['limit' => 200]);
         $tags = $this->GamesTags->Tags->find('list', ['limit' => 200]);
@@ -80,11 +80,11 @@ class GamesTagsController extends AppController
         if ($this->request->is(['patch', 'post', 'put'])) {
             $gamesTag = $this->GamesTags->patchEntity($gamesTag, $this->request->getData());
             if ($this->GamesTags->save($gamesTag)) {
-                $this->Flash->success(__('The games tag has been saved.'));
+                $this->Flash->success(__('The game\'s tag has been changed.'));
 
                 return $this->redirect(['action' => 'index']);
             }
-            $this->Flash->error(__('The games tag could not be saved. Please, try again.'));
+            $this->Flash->error(__('The game\'s tag could not be changed. Please, try again.'));
         }
         $games = $this->GamesTags->Games->find('list', ['limit' => 200]);
         $tags = $this->GamesTags->Tags->find('list', ['limit' => 200]);
@@ -103,9 +103,9 @@ class GamesTagsController extends AppController
         $this->request->allowMethod(['post', 'delete']);
         $gamesTag = $this->GamesTags->get($id);
         if ($this->GamesTags->delete($gamesTag)) {
-            $this->Flash->success(__('The games tag has been deleted.'));
+            $this->Flash->success(__('The game\'s tag has been deleted.'));
         } else {
-            $this->Flash->error(__('The games tag could not be deleted. Please, try again.'));
+            $this->Flash->error(__('The game\'s tag could not be deleted. Please, try again.'));
         }
 
         return $this->redirect(['action' => 'index']);

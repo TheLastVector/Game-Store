@@ -54,11 +54,11 @@ class GamesPlatformsController extends AppController
         if ($this->request->is('post')) {
             $gamesPlatform = $this->GamesPlatforms->patchEntity($gamesPlatform, $this->request->getData());
             if ($this->GamesPlatforms->save($gamesPlatform)) {
-                $this->Flash->success(__('The games platform has been saved.'));
+                $this->Flash->success(__('The platform association to the game has been saved.'));
 
                 return $this->redirect(['action' => 'index']);
             }
-            $this->Flash->error(__('The games platform could not be saved. Please, try again.'));
+            $this->Flash->error(__('The platform association to the game could not be saved. Please, try again.'));
         }
         $games = $this->GamesPlatforms->Games->find('list', ['limit' => 200]);
         $platforms = $this->GamesPlatforms->Platforms->find('list', ['limit' => 200]);
@@ -80,11 +80,11 @@ class GamesPlatformsController extends AppController
         if ($this->request->is(['patch', 'post', 'put'])) {
             $gamesPlatform = $this->GamesPlatforms->patchEntity($gamesPlatform, $this->request->getData());
             if ($this->GamesPlatforms->save($gamesPlatform)) {
-                $this->Flash->success(__('The games platform has been saved.'));
+                $this->Flash->success(__('The platform association to the game has been saved.'));
 
                 return $this->redirect(['action' => 'index']);
             }
-            $this->Flash->error(__('The games platform could not be saved. Please, try again.'));
+            $this->Flash->error(__('The platform association to the game could not be saved. Please, try again.'));
         }
         $games = $this->GamesPlatforms->Games->find('list', ['limit' => 200]);
         $platforms = $this->GamesPlatforms->Platforms->find('list', ['limit' => 200]);
@@ -103,9 +103,9 @@ class GamesPlatformsController extends AppController
         $this->request->allowMethod(['post', 'delete']);
         $gamesPlatform = $this->GamesPlatforms->get($id);
         if ($this->GamesPlatforms->delete($gamesPlatform)) {
-            $this->Flash->success(__('The games platform has been deleted.'));
+            $this->Flash->success(__('The platform association to the game has been deleted.'));
         } else {
-            $this->Flash->error(__('The games platform could not be deleted. Please, try again.'));
+            $this->Flash->error(__('The platform association to the game could not be deleted. Please, try again.'));
         }
 
         return $this->redirect(['action' => 'index']);

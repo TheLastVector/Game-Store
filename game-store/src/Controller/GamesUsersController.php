@@ -61,34 +61,16 @@ class GamesUsersController extends AppController
         if ($this->request->is('post')) {
             $gamesUser = $this->GamesUsers->patchEntity($gamesUser, $this->request->getData());
             if ($this->GamesUsers->save($gamesUser)) {
-                $this->Flash->success(__('The games user has been saved.'));
+                $this->Flash->success(__('The purchase has been saved.'));
 
                 return $this->redirect(['action' => 'index']);
             }
-            $this->Flash->error(__('The games user could not be saved. Please, try again.'));
+            $this->Flash->error(__('The purchase could not be saved. Please, try again.'));
         }
         $users = $this->GamesUsers->Users->find('list', ['limit' => 200]);
         $games = $this->GamesUsers->Games->find('list', ['limit' => 200]);
         $this->set(compact('gamesUser', 'users', 'games'));
     }
-
-    /*public function buy($userId = null)
-    {
-        $user = $this->GamesUsers -> Users ->get($userId);
-        $gamesUser = $this->GamesUsers->newEntity();
-        if ($this->request->is('post')) {
-            $gamesUser = $this->GamesUsers->patchEntity($gamesUser, $this->request->getData());
-            
-            if ($this->GamesUsers->save($gamesUser)) {
-                $this->Flash->success(__('The games user has been saved.'));
-
-                return $this->redirect(['action' => 'index']);
-            }
-            $this->Flash->error(__('The games user could not be saved. Please, try again.'));
-        }
-        $games = $this->GamesUsers->Games->find('list', ['limit' => 200]);
-        $this->set(compact('gamesUser', 'user', 'games'));
-    }*/
 
     public function buy($gameId = null)
     {
@@ -102,11 +84,11 @@ class GamesUsersController extends AppController
         if ($this->request->is('post')) {
             $gamesUser = $this->GamesUsers->patchEntity($gamesUser, $this->request->getData());
             if ($this->GamesUsers->save($gamesUser)) {
-                $this->Flash->success(__('The games user has been saved.'));
+                $this->Flash->success(__('The purchase has been saved.'));
 
                 return $this->redirect(['controller' => 'Users', 'action' => 'view', $gamesUser->user_id]);
             }
-            $this->Flash->error(__('The games user could not be saved. Please, try again.'));
+            $this->Flash->error(__('The purchase could not be saved. Please, try again.'));
         }
 
         $this->set(compact('gamesUser', 'user', 'game'));
@@ -127,11 +109,11 @@ class GamesUsersController extends AppController
         if ($this->request->is(['patch', 'post', 'put'])) {
             $gamesUser = $this->GamesUsers->patchEntity($gamesUser, $this->request->getData());
             if ($this->GamesUsers->save($gamesUser)) {
-                $this->Flash->success(__('The games user has been saved.'));
+                $this->Flash->success(__('The purchase has been saved.'));
 
                 return $this->redirect(['action' => 'index']);
             }
-            $this->Flash->error(__('The games user could not be saved. Please, try again.'));
+            $this->Flash->error(__('The purchase could not be saved. Please, try again.'));
         }
         $users = $this->GamesUsers->Users->find('list', ['limit' => 200]);
         $games = $this->GamesUsers->Games->find('list', ['limit' => 200]);
@@ -150,9 +132,9 @@ class GamesUsersController extends AppController
         $this->request->allowMethod(['post', 'delete']);
         $gamesUser = $this->GamesUsers->get($id);
         if ($this->GamesUsers->delete($gamesUser)) {
-            $this->Flash->success(__('The games user has been deleted.'));
+            $this->Flash->success(__('The purchase has been deleted.'));
         } else {
-            $this->Flash->error(__('The games user could not be deleted. Please, try again.'));
+            $this->Flash->error(__('The purchase could not be deleted. Please, try again.'));
         }
 
         return $this->redirect(['action' => 'index']);

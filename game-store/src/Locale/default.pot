@@ -1,0 +1,1470 @@
+# LANGUAGE translation of CakePHP Application
+# Copyright YEAR NAME <EMAIL@ADDRESS>
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PROJECT VERSION\n"
+"POT-Creation-Date: 2019-10-15 21:00+0000\n"
+"PO-Revision-Date: YYYY-mm-DD HH:MM+ZZZZ\n"
+"Last-Translator: NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <EMAIL@ADDRESS>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
+
+#: Controller/GamesController.php:69
+#: Controller/GamesController.php:96
+msgid "The game has been saved."
+msgstr ""
+
+#: Controller/GamesController.php:73
+#: Controller/GamesController.php:100
+msgid "The game could not be saved. Please, try again."
+msgstr ""
+
+#: Controller/GamesController.php:120
+msgid "The game has been deleted."
+msgstr ""
+
+#: Controller/GamesController.php:122
+msgid "The game could not be deleted. Please, try again."
+msgstr ""
+
+#: Controller/GamesPlatformsController.php:57
+#: Controller/GamesPlatformsController.php:83
+msgid "The platform association to the game has been saved."
+msgstr ""
+
+#: Controller/GamesPlatformsController.php:61
+#: Controller/GamesPlatformsController.php:87
+msgid "The platform association to the game could not be saved. Please, try again."
+msgstr ""
+
+#: Controller/GamesPlatformsController.php:106
+msgid "The platform association to the game has been deleted."
+msgstr ""
+
+#: Controller/GamesPlatformsController.php:108
+msgid "The platform association to the game could not be deleted. Please, try again."
+msgstr ""
+
+#: Controller/GamesTagsController.php:57
+msgid "The game has been tagged."
+msgstr ""
+
+#: Controller/GamesTagsController.php:61
+msgid "The game could not be tagged. Please, try again."
+msgstr ""
+
+#: Controller/GamesTagsController.php:83
+msgid "The game's tag has been changed."
+msgstr ""
+
+#: Controller/GamesTagsController.php:87
+msgid "The game's tag could not be changed. Please, try again."
+msgstr ""
+
+#: Controller/GamesTagsController.php:106
+msgid "The game's tag has been deleted."
+msgstr ""
+
+#: Controller/GamesTagsController.php:108
+msgid "The game's tag could not be deleted. Please, try again."
+msgstr ""
+
+#: Controller/GamesUsersController.php:64
+#: Controller/GamesUsersController.php:87
+#: Controller/GamesUsersController.php:112
+msgid "The purchase has been saved."
+msgstr ""
+
+#: Controller/GamesUsersController.php:68
+#: Controller/GamesUsersController.php:91
+#: Controller/GamesUsersController.php:116
+msgid "The purchase could not be saved. Please, try again."
+msgstr ""
+
+#: Controller/GamesUsersController.php:135
+msgid "The purchase has been deleted."
+msgstr ""
+
+#: Controller/GamesUsersController.php:137
+msgid "The purchase could not be deleted. Please, try again."
+msgstr ""
+
+#: Controller/LanguagesController.php:54
+#: Controller/LanguagesController.php:78
+msgid "The language has been saved."
+msgstr ""
+
+#: Controller/LanguagesController.php:58
+#: Controller/LanguagesController.php:82
+msgid "The language could not be saved. Please, try again."
+msgstr ""
+
+#: Controller/LanguagesController.php:99
+msgid "The language has been deleted."
+msgstr ""
+
+#: Controller/LanguagesController.php:101
+msgid "The language could not be deleted. Please, try again."
+msgstr ""
+
+#: Controller/PlatformsController.php:54
+#: Controller/PlatformsController.php:79
+msgid "The platform has been saved."
+msgstr ""
+
+#: Controller/PlatformsController.php:58
+#: Controller/PlatformsController.php:83
+msgid "The platform could not be saved. Please, try again."
+msgstr ""
+
+#: Controller/PlatformsController.php:101
+msgid "The platform has been deleted."
+msgstr ""
+
+#: Controller/PlatformsController.php:103
+msgid "The platform could not be deleted. Please, try again."
+msgstr ""
+
+#: Controller/RolesController.php:54
+#: Controller/RolesController.php:78
+msgid "The role has been saved."
+msgstr ""
+
+#: Controller/RolesController.php:58
+#: Controller/RolesController.php:82
+msgid "The role could not be saved. Please, try again."
+msgstr ""
+
+#: Controller/RolesController.php:99
+msgid "The role has been deleted."
+msgstr ""
+
+#: Controller/RolesController.php:101
+msgid "The role could not be deleted. Please, try again."
+msgstr ""
+
+#: Controller/TagsController.php:54
+#: Controller/TagsController.php:79
+msgid "The tag has been saved."
+msgstr ""
+
+#: Controller/TagsController.php:58
+#: Controller/TagsController.php:83
+msgid "The tag could not be saved. Please, try again."
+msgstr ""
+
+#: Controller/TagsController.php:101
+msgid "The tag has been deleted."
+msgstr ""
+
+#: Controller/TagsController.php:103
+msgid "The tag could not be deleted. Please, try again."
+msgstr ""
+
+#: Controller/UsersController.php:33
+msgid "You have successfully signed up. Login to access your account."
+msgstr ""
+
+#: Controller/UsersController.php:38
+#: Controller/UsersController.php:115
+#: Controller/UsersController.php:142
+msgid "The user could not be saved. Please, try again."
+msgstr ""
+
+#: Controller/UsersController.php:110
+#: Controller/UsersController.php:138
+msgid "The user has been saved."
+msgstr ""
+
+#: Controller/UsersController.php:162
+msgid "The user has been deleted."
+msgstr ""
+
+#: Controller/UsersController.php:164
+msgid "The user could not be deleted. Please, try again."
+msgstr ""
+
+#: Template/Games/add.ctp:9
+#: Template/Games/edit.ctp:9
+#: Template/Games/index.ctp:9
+#: Template/Games/view.ctp:9
+#: Template/GamesPlatforms/add.ctp:9
+#: Template/GamesPlatforms/edit.ctp:9
+#: Template/GamesPlatforms/index.ctp:9
+#: Template/GamesPlatforms/view.ctp:9
+#: Template/GamesTags/edit.ctp:9
+#: Template/GamesTags/index.ctp:9
+#: Template/GamesTags/view.ctp:9
+#: Template/GamesUsers/add.ctp:9
+#: Template/GamesUsers/buy.ctp:9
+#: Template/GamesUsers/index.ctp:9
+#: Template/Languages/add.ctp:9
+#: Template/Languages/edit.ctp:9
+#: Template/Languages/index.ctp:9
+#: Template/Languages/view.ctp:9
+#: Template/Platforms/add.ctp:9
+#: Template/Platforms/edit.ctp:9
+#: Template/Platforms/index.ctp:9
+#: Template/Platforms/view.ctp:9
+#: Template/Roles/add.ctp:9
+#: Template/Roles/edit.ctp:9
+#: Template/Roles/index.ctp:9
+#: Template/Roles/view.ctp:9
+#: Template/Tags/add.ctp:9
+#: Template/Tags/edit.ctp:9
+#: Template/Tags/index.ctp:9
+#: Template/Tags/view.ctp:9
+#: Template/Users/add.ctp:9
+#: Template/Users/edit.ctp:9
+#: Template/Users/index.ctp:9
+#: Template/Users/view.ctp:9
+msgid "Menu"
+msgstr ""
+
+#: Template/Games/add.ctp:11
+#: Template/Games/edit.ctp:11
+#: Template/Games/view.ctp:13
+#: Template/GamesPlatforms/add.ctp:11
+#: Template/GamesPlatforms/edit.ctp:11
+#: Template/GamesPlatforms/index.ctp:11
+#: Template/GamesPlatforms/view.ctp:11
+#: Template/GamesTags/add.ctp:11
+#: Template/GamesTags/edit.ctp:11
+#: Template/GamesTags/index.ctp:11
+#: Template/GamesTags/view.ctp:11
+#: Template/Languages/add.ctp:11
+#: Template/Languages/edit.ctp:11
+#: Template/Languages/index.ctp:11
+#: Template/Languages/view.ctp:11
+#: Template/Platforms/add.ctp:11
+#: Template/Platforms/edit.ctp:11
+#: Template/Platforms/index.ctp:11
+#: Template/Platforms/view.ctp:11
+#: Template/Roles/add.ctp:11
+#: Template/Roles/edit.ctp:11
+#: Template/Roles/index.ctp:11
+#: Template/Roles/view.ctp:11
+#: Template/Tags/add.ctp:11
+#: Template/Tags/edit.ctp:11
+#: Template/Tags/index.ctp:11
+#: Template/Tags/view.ctp:11
+#: Template/Users/add.ctp:11
+#: Template/Users/edit.ctp:13
+#: Template/Users/index.ctp:11
+#: Template/Users/view.ctp:13
+msgid "Store"
+msgstr ""
+
+#: Template/Games/add.ctp:13
+#: Template/Games/edit.ctp:13
+#: Template/Games/index.ctp:14
+#: Template/Games/view.ctp:15
+#: Template/GamesPlatforms/edit.ctp:13
+#: Template/GamesPlatforms/index.ctp:13
+#: Template/GamesPlatforms/view.ctp:13
+#: Template/GamesTags/add.ctp:17
+#: Template/GamesTags/edit.ctp:18
+#: Template/GamesTags/index.ctp:17
+#: Template/GamesTags/view.ctp:18
+#: Template/GamesUsers/add.ctp:17
+#: Template/GamesUsers/buy.ctp:20
+#: Template/GamesUsers/edit.ctp:18
+#: Template/GamesUsers/index.ctp:17
+#: Template/GamesUsers/view.ctp:18
+#: Template/Languages/add.ctp:17
+#: Template/Languages/edit.ctp:18
+#: Template/Languages/index.ctp:17
+#: Template/Languages/view.ctp:18
+#: Template/Platforms/add.ctp:17
+#: Template/Platforms/edit.ctp:18
+#: Template/Platforms/index.ctp:17
+#: Template/Platforms/view.ctp:18
+#: Template/Roles/add.ctp:17
+#: Template/Roles/edit.ctp:18
+#: Template/Roles/index.ctp:17
+#: Template/Roles/view.ctp:18
+#: Template/Tags/add.ctp:17
+#: Template/Tags/edit.ctp:18
+#: Template/Tags/index.ctp:17
+#: Template/Tags/view.ctp:18
+#: Template/Users/add.ctp:17
+#: Template/Users/edit.ctp:20
+#: Template/Users/index.ctp:18
+#: Template/Users/view.ctp:20
+msgid "Associate a platform to a game"
+msgstr ""
+
+#: Template/Games/add.ctp:14
+#: Template/Games/edit.ctp:14
+#: Template/Games/index.ctp:15
+#: Template/Games/view.ctp:16
+#: Template/GamesPlatforms/add.ctp:13
+#: Template/GamesPlatforms/edit.ctp:14
+#: Template/GamesPlatforms/view.ctp:14
+#: Template/GamesTags/add.ctp:18
+#: Template/GamesTags/edit.ctp:19
+#: Template/GamesTags/index.ctp:18
+#: Template/GamesTags/view.ctp:19
+#: Template/GamesUsers/add.ctp:18
+#: Template/GamesUsers/buy.ctp:21
+#: Template/GamesUsers/edit.ctp:19
+#: Template/GamesUsers/index.ctp:18
+#: Template/GamesUsers/view.ctp:19
+#: Template/Languages/add.ctp:18
+#: Template/Languages/edit.ctp:19
+#: Template/Languages/index.ctp:18
+#: Template/Languages/view.ctp:19
+#: Template/Platforms/add.ctp:18
+#: Template/Platforms/edit.ctp:19
+#: Template/Platforms/index.ctp:18
+#: Template/Platforms/view.ctp:19
+#: Template/Roles/add.ctp:18
+#: Template/Roles/edit.ctp:19
+#: Template/Roles/index.ctp:18
+#: Template/Roles/view.ctp:19
+#: Template/Tags/add.ctp:18
+#: Template/Tags/edit.ctp:19
+#: Template/Tags/index.ctp:18
+#: Template/Tags/view.ctp:19
+#: Template/Users/add.ctp:18
+#: Template/Users/edit.ctp:21
+#: Template/Users/index.ctp:19
+#: Template/Users/view.ctp:21
+msgid "List all games and their platforms"
+msgstr ""
+
+#: Template/Games/add.ctp:16
+#: Template/Games/edit.ctp:16
+#: Template/Games/index.ctp:17
+#: Template/Games/view.ctp:18
+#: Template/GamesPlatforms/add.ctp:18
+#: Template/GamesPlatforms/edit.ctp:18
+#: Template/GamesPlatforms/index.ctp:17
+#: Template/GamesPlatforms/view.ctp:18
+#: Template/GamesTags/edit.ctp:13
+#: Template/GamesTags/index.ctp:13
+#: Template/GamesTags/view.ctp:13
+#: Template/GamesUsers/add.ctp:20
+#: Template/GamesUsers/buy.ctp:23
+#: Template/GamesUsers/edit.ctp:21
+#: Template/GamesUsers/index.ctp:20
+#: Template/GamesUsers/view.ctp:21
+#: Template/Languages/add.ctp:20
+#: Template/Languages/edit.ctp:21
+#: Template/Languages/index.ctp:20
+#: Template/Languages/view.ctp:21
+#: Template/Platforms/add.ctp:20
+#: Template/Platforms/edit.ctp:21
+#: Template/Platforms/index.ctp:20
+#: Template/Platforms/view.ctp:21
+#: Template/Roles/add.ctp:20
+#: Template/Roles/edit.ctp:21
+#: Template/Roles/index.ctp:20
+#: Template/Roles/view.ctp:21
+#: Template/Tags/add.ctp:20
+#: Template/Tags/edit.ctp:21
+#: Template/Tags/index.ctp:20
+#: Template/Tags/view.ctp:21
+#: Template/Users/add.ctp:20
+#: Template/Users/edit.ctp:23
+#: Template/Users/index.ctp:21
+#: Template/Users/view.ctp:23
+msgid "Tag a game"
+msgstr ""
+
+#: Template/Games/add.ctp:17
+#: Template/Games/edit.ctp:17
+#: Template/Games/index.ctp:18
+#: Template/Games/view.ctp:19
+#: Template/GamesPlatforms/add.ctp:19
+#: Template/GamesPlatforms/edit.ctp:19
+#: Template/GamesPlatforms/index.ctp:18
+#: Template/GamesPlatforms/view.ctp:19
+#: Template/GamesTags/add.ctp:13
+#: Template/GamesTags/edit.ctp:14
+#: Template/GamesTags/view.ctp:14
+#: Template/GamesUsers/add.ctp:21
+#: Template/GamesUsers/buy.ctp:24
+#: Template/GamesUsers/edit.ctp:22
+#: Template/GamesUsers/index.ctp:21
+#: Template/GamesUsers/view.ctp:22
+#: Template/Languages/add.ctp:21
+#: Template/Languages/edit.ctp:22
+#: Template/Languages/index.ctp:21
+#: Template/Languages/view.ctp:22
+#: Template/Platforms/add.ctp:21
+#: Template/Platforms/edit.ctp:22
+#: Template/Platforms/index.ctp:21
+#: Template/Platforms/view.ctp:22
+#: Template/Roles/add.ctp:21
+#: Template/Roles/edit.ctp:22
+#: Template/Roles/index.ctp:21
+#: Template/Roles/view.ctp:22
+#: Template/Tags/add.ctp:21
+#: Template/Tags/edit.ctp:22
+#: Template/Tags/index.ctp:21
+#: Template/Tags/view.ctp:22
+#: Template/Users/add.ctp:21
+#: Template/Users/edit.ctp:24
+#: Template/Users/index.ctp:22
+#: Template/Users/view.ctp:24
+msgid "List all games and their tags"
+msgstr ""
+
+#: Template/Games/add.ctp:19
+#: Template/Games/edit.ctp:19
+#: Template/Games/index.ctp:20
+#: Template/Games/view.ctp:21
+#: Template/GamesPlatforms/add.ctp:21
+#: Template/GamesPlatforms/edit.ctp:21
+#: Template/GamesPlatforms/index.ctp:20
+#: Template/GamesPlatforms/view.ctp:21
+#: Template/GamesTags/add.ctp:20
+#: Template/GamesTags/edit.ctp:21
+#: Template/GamesTags/index.ctp:20
+#: Template/GamesTags/view.ctp:21
+#: Template/GamesUsers/buy.ctp:15
+#: Template/GamesUsers/edit.ctp:13
+#: Template/GamesUsers/index.ctp:13
+#: Template/GamesUsers/view.ctp:13
+#: Template/Languages/add.ctp:23
+#: Template/Languages/edit.ctp:24
+#: Template/Languages/index.ctp:23
+#: Template/Languages/view.ctp:24
+#: Template/Platforms/add.ctp:23
+#: Template/Platforms/edit.ctp:24
+#: Template/Platforms/index.ctp:23
+#: Template/Platforms/view.ctp:24
+#: Template/Roles/add.ctp:23
+#: Template/Roles/edit.ctp:24
+#: Template/Roles/index.ctp:23
+#: Template/Roles/view.ctp:24
+#: Template/Tags/add.ctp:23
+#: Template/Tags/edit.ctp:24
+#: Template/Tags/index.ctp:23
+#: Template/Tags/view.ctp:24
+#: Template/Users/add.ctp:23
+#: Template/Users/edit.ctp:26
+#: Template/Users/index.ctp:24
+#: Template/Users/view.ctp:26
+msgid "Force a new purchase"
+msgstr ""
+
+#: Template/Games/add.ctp:20
+#: Template/Games/edit.ctp:20
+#: Template/Games/index.ctp:21
+#: Template/Games/view.ctp:22
+#: Template/GamesPlatforms/add.ctp:22
+#: Template/GamesPlatforms/edit.ctp:22
+#: Template/GamesPlatforms/index.ctp:21
+#: Template/GamesPlatforms/view.ctp:22
+#: Template/GamesTags/add.ctp:21
+#: Template/GamesTags/edit.ctp:22
+#: Template/GamesTags/index.ctp:21
+#: Template/GamesTags/view.ctp:22
+#: Template/GamesUsers/add.ctp:13
+#: Template/GamesUsers/buy.ctp:16
+#: Template/GamesUsers/edit.ctp:14
+#: Template/GamesUsers/view.ctp:14
+#: Template/Languages/add.ctp:24
+#: Template/Languages/edit.ctp:25
+#: Template/Languages/index.ctp:24
+#: Template/Languages/view.ctp:25
+#: Template/Platforms/add.ctp:24
+#: Template/Platforms/edit.ctp:25
+#: Template/Platforms/index.ctp:24
+#: Template/Platforms/view.ctp:25
+#: Template/Roles/add.ctp:24
+#: Template/Roles/edit.ctp:25
+#: Template/Roles/index.ctp:24
+#: Template/Roles/view.ctp:25
+#: Template/Tags/add.ctp:24
+#: Template/Tags/edit.ctp:25
+#: Template/Tags/index.ctp:24
+#: Template/Tags/view.ctp:25
+#: Template/Users/add.ctp:24
+#: Template/Users/edit.ctp:27
+#: Template/Users/index.ctp:25
+#: Template/Users/view.ctp:27
+msgid "List all users and their purchases"
+msgstr ""
+
+#: Template/Games/add.ctp:22
+#: Template/Games/edit.ctp:22
+#: Template/Games/index.ctp:23
+#: Template/Games/view.ctp:24
+#: Template/GamesPlatforms/add.ctp:24
+#: Template/GamesPlatforms/edit.ctp:24
+#: Template/GamesPlatforms/index.ctp:23
+#: Template/GamesPlatforms/view.ctp:24
+#: Template/GamesTags/add.ctp:23
+#: Template/GamesTags/edit.ctp:24
+#: Template/GamesTags/index.ctp:23
+#: Template/GamesTags/view.ctp:24
+#: Template/GamesUsers/add.ctp:23
+#: Template/GamesUsers/buy.ctp:26
+#: Template/GamesUsers/edit.ctp:24
+#: Template/GamesUsers/index.ctp:23
+#: Template/GamesUsers/view.ctp:24
+#: Template/Languages/edit.ctp:13
+#: Template/Languages/index.ctp:13
+#: Template/Languages/view.ctp:13
+#: Template/Platforms/add.ctp:26
+#: Template/Platforms/edit.ctp:27
+#: Template/Platforms/index.ctp:26
+#: Template/Platforms/view.ctp:27
+#: Template/Roles/add.ctp:26
+#: Template/Roles/edit.ctp:27
+#: Template/Roles/index.ctp:26
+#: Template/Roles/view.ctp:27
+#: Template/Tags/add.ctp:26
+#: Template/Tags/edit.ctp:27
+#: Template/Tags/index.ctp:26
+#: Template/Tags/view.ctp:27
+#: Template/Users/add.ctp:26
+#: Template/Users/edit.ctp:29
+#: Template/Users/index.ctp:27
+#: Template/Users/view.ctp:29
+msgid "Add a new language"
+msgstr ""
+
+#: Template/Games/add.ctp:23
+#: Template/Games/edit.ctp:23
+#: Template/Games/index.ctp:24
+#: Template/Games/view.ctp:25
+#: Template/GamesPlatforms/add.ctp:25
+#: Template/GamesPlatforms/edit.ctp:25
+#: Template/GamesPlatforms/index.ctp:24
+#: Template/GamesPlatforms/view.ctp:25
+#: Template/GamesTags/add.ctp:24
+#: Template/GamesTags/edit.ctp:25
+#: Template/GamesTags/index.ctp:24
+#: Template/GamesTags/view.ctp:25
+#: Template/GamesUsers/add.ctp:24
+#: Template/GamesUsers/buy.ctp:27
+#: Template/GamesUsers/edit.ctp:25
+#: Template/GamesUsers/index.ctp:24
+#: Template/GamesUsers/view.ctp:25
+#: Template/Languages/add.ctp:13
+#: Template/Languages/edit.ctp:14
+#: Template/Languages/view.ctp:14
+#: Template/Platforms/add.ctp:27
+#: Template/Platforms/edit.ctp:28
+#: Template/Platforms/index.ctp:27
+#: Template/Platforms/view.ctp:28
+#: Template/Roles/add.ctp:27
+#: Template/Roles/edit.ctp:28
+#: Template/Roles/index.ctp:27
+#: Template/Roles/view.ctp:28
+#: Template/Tags/add.ctp:27
+#: Template/Tags/edit.ctp:28
+#: Template/Tags/index.ctp:27
+#: Template/Tags/view.ctp:28
+#: Template/Users/add.ctp:27
+#: Template/Users/edit.ctp:30
+#: Template/Users/index.ctp:28
+#: Template/Users/view.ctp:30
+msgid "List all languages"
+msgstr ""
+
+#: Template/Games/add.ctp:25
+#: Template/Games/edit.ctp:25
+#: Template/Games/index.ctp:26
+#: Template/Games/view.ctp:27
+#: Template/GamesPlatforms/add.ctp:27
+#: Template/GamesPlatforms/edit.ctp:27
+#: Template/GamesPlatforms/index.ctp:26
+#: Template/GamesPlatforms/view.ctp:27
+#: Template/GamesTags/add.ctp:26
+#: Template/GamesTags/edit.ctp:27
+#: Template/GamesTags/index.ctp:26
+#: Template/GamesTags/view.ctp:27
+#: Template/GamesUsers/add.ctp:26
+#: Template/GamesUsers/buy.ctp:29
+#: Template/GamesUsers/edit.ctp:27
+#: Template/GamesUsers/index.ctp:26
+#: Template/GamesUsers/view.ctp:27
+#: Template/Languages/add.ctp:26
+#: Template/Languages/edit.ctp:27
+#: Template/Languages/index.ctp:26
+#: Template/Languages/view.ctp:27
+#: Template/Platforms/edit.ctp:13
+#: Template/Platforms/index.ctp:13
+#: Template/Platforms/view.ctp:13
+#: Template/Roles/add.ctp:29
+#: Template/Roles/edit.ctp:30
+#: Template/Roles/index.ctp:29
+#: Template/Roles/view.ctp:30
+#: Template/Tags/add.ctp:29
+#: Template/Tags/edit.ctp:30
+#: Template/Tags/index.ctp:29
+#: Template/Tags/view.ctp:30
+#: Template/Users/add.ctp:29
+#: Template/Users/edit.ctp:32
+#: Template/Users/index.ctp:30
+#: Template/Users/view.ctp:32
+msgid "Add a new platform"
+msgstr ""
+
+#: Template/Games/add.ctp:26
+#: Template/Games/edit.ctp:26
+#: Template/Games/index.ctp:27
+#: Template/Games/view.ctp:28
+#: Template/GamesPlatforms/add.ctp:28
+#: Template/GamesPlatforms/edit.ctp:28
+#: Template/GamesPlatforms/index.ctp:27
+#: Template/GamesPlatforms/view.ctp:28
+#: Template/GamesTags/add.ctp:27
+#: Template/GamesTags/edit.ctp:28
+#: Template/GamesTags/index.ctp:27
+#: Template/GamesTags/view.ctp:28
+#: Template/GamesUsers/add.ctp:27
+#: Template/GamesUsers/buy.ctp:30
+#: Template/GamesUsers/edit.ctp:28
+#: Template/GamesUsers/index.ctp:27
+#: Template/GamesUsers/view.ctp:28
+#: Template/Languages/add.ctp:27
+#: Template/Languages/edit.ctp:28
+#: Template/Languages/index.ctp:27
+#: Template/Languages/view.ctp:28
+#: Template/Platforms/add.ctp:13
+#: Template/Platforms/edit.ctp:14
+#: Template/Platforms/view.ctp:14
+#: Template/Roles/add.ctp:30
+#: Template/Roles/edit.ctp:31
+#: Template/Roles/index.ctp:30
+#: Template/Roles/view.ctp:31
+#: Template/Tags/add.ctp:30
+#: Template/Tags/edit.ctp:31
+#: Template/Tags/index.ctp:30
+#: Template/Tags/view.ctp:31
+#: Template/Users/add.ctp:30
+#: Template/Users/edit.ctp:33
+#: Template/Users/index.ctp:31
+#: Template/Users/view.ctp:33
+msgid "List all platforms"
+msgstr ""
+
+#: Template/Games/add.ctp:28
+#: Template/Games/edit.ctp:28
+#: Template/Games/index.ctp:29
+#: Template/Games/view.ctp:30
+#: Template/GamesPlatforms/add.ctp:30
+#: Template/GamesPlatforms/edit.ctp:30
+#: Template/GamesPlatforms/index.ctp:29
+#: Template/GamesPlatforms/view.ctp:30
+#: Template/GamesTags/add.ctp:29
+#: Template/GamesTags/edit.ctp:30
+#: Template/GamesTags/index.ctp:29
+#: Template/GamesTags/view.ctp:30
+#: Template/GamesUsers/add.ctp:29
+#: Template/GamesUsers/buy.ctp:32
+#: Template/GamesUsers/edit.ctp:30
+#: Template/GamesUsers/index.ctp:29
+#: Template/GamesUsers/view.ctp:30
+#: Template/Languages/add.ctp:29
+#: Template/Languages/edit.ctp:30
+#: Template/Languages/index.ctp:29
+#: Template/Languages/view.ctp:30
+#: Template/Platforms/add.ctp:29
+#: Template/Platforms/edit.ctp:30
+#: Template/Platforms/index.ctp:29
+#: Template/Platforms/view.ctp:30
+#: Template/Roles/edit.ctp:13
+#: Template/Roles/index.ctp:13
+#: Template/Roles/view.ctp:13
+#: Template/Tags/add.ctp:32
+#: Template/Tags/edit.ctp:33
+#: Template/Tags/index.ctp:32
+#: Template/Tags/view.ctp:33
+#: Template/Users/add.ctp:32
+#: Template/Users/edit.ctp:35
+#: Template/Users/index.ctp:33
+#: Template/Users/view.ctp:35
+msgid "Add a new role"
+msgstr ""
+
+#: Template/Games/add.ctp:29
+#: Template/Games/edit.ctp:29
+#: Template/Games/index.ctp:30
+#: Template/Games/view.ctp:31
+#: Template/GamesPlatforms/add.ctp:31
+#: Template/GamesPlatforms/edit.ctp:31
+#: Template/GamesPlatforms/index.ctp:30
+#: Template/GamesPlatforms/view.ctp:31
+#: Template/GamesTags/add.ctp:30
+#: Template/GamesTags/edit.ctp:31
+#: Template/GamesTags/index.ctp:30
+#: Template/GamesTags/view.ctp:31
+#: Template/GamesUsers/add.ctp:30
+#: Template/GamesUsers/buy.ctp:33
+#: Template/GamesUsers/edit.ctp:31
+#: Template/GamesUsers/index.ctp:30
+#: Template/GamesUsers/view.ctp:31
+#: Template/Languages/add.ctp:30
+#: Template/Languages/edit.ctp:31
+#: Template/Languages/index.ctp:30
+#: Template/Languages/view.ctp:31
+#: Template/Platforms/add.ctp:30
+#: Template/Platforms/edit.ctp:31
+#: Template/Platforms/index.ctp:30
+#: Template/Platforms/view.ctp:31
+#: Template/Roles/add.ctp:13
+#: Template/Roles/edit.ctp:14
+#: Template/Roles/view.ctp:14
+#: Template/Tags/add.ctp:33
+#: Template/Tags/edit.ctp:34
+#: Template/Tags/index.ctp:33
+#: Template/Tags/view.ctp:34
+#: Template/Users/add.ctp:33
+#: Template/Users/edit.ctp:36
+#: Template/Users/index.ctp:34
+#: Template/Users/view.ctp:36
+msgid "List all roles"
+msgstr ""
+
+#: Template/Games/add.ctp:31
+#: Template/Games/edit.ctp:31
+#: Template/Games/index.ctp:32
+#: Template/Games/view.ctp:33
+#: Template/GamesPlatforms/add.ctp:33
+#: Template/GamesPlatforms/edit.ctp:33
+#: Template/GamesPlatforms/index.ctp:32
+#: Template/GamesPlatforms/view.ctp:33
+#: Template/GamesTags/add.ctp:32
+#: Template/GamesTags/edit.ctp:33
+#: Template/GamesTags/index.ctp:32
+#: Template/GamesTags/view.ctp:33
+#: Template/GamesUsers/add.ctp:32
+#: Template/GamesUsers/buy.ctp:35
+#: Template/GamesUsers/edit.ctp:33
+#: Template/GamesUsers/index.ctp:32
+#: Template/GamesUsers/view.ctp:33
+#: Template/Languages/add.ctp:32
+#: Template/Languages/edit.ctp:33
+#: Template/Languages/index.ctp:32
+#: Template/Languages/view.ctp:33
+#: Template/Platforms/add.ctp:32
+#: Template/Platforms/edit.ctp:33
+#: Template/Platforms/index.ctp:32
+#: Template/Platforms/view.ctp:33
+#: Template/Roles/add.ctp:32
+#: Template/Roles/edit.ctp:33
+#: Template/Roles/index.ctp:32
+#: Template/Roles/view.ctp:33
+#: Template/Tags/add.ctp:35
+#: Template/Tags/edit.ctp:13
+#: Template/Tags/edit.ctp:36
+#: Template/Tags/index.ctp:13
+#: Template/Tags/index.ctp:35
+#: Template/Tags/view.ctp:13
+#: Template/Tags/view.ctp:36
+#: Template/Users/add.ctp:35
+#: Template/Users/edit.ctp:38
+#: Template/Users/index.ctp:36
+#: Template/Users/view.ctp:38
+msgid "Add a new tag"
+msgstr ""
+
+#: Template/Games/add.ctp:32
+#: Template/Games/edit.ctp:32
+#: Template/Games/index.ctp:33
+#: Template/Games/view.ctp:34
+#: Template/GamesPlatforms/add.ctp:34
+#: Template/GamesPlatforms/edit.ctp:34
+#: Template/GamesPlatforms/index.ctp:33
+#: Template/GamesPlatforms/view.ctp:34
+#: Template/GamesTags/add.ctp:33
+#: Template/GamesTags/edit.ctp:34
+#: Template/GamesTags/index.ctp:33
+#: Template/GamesTags/view.ctp:34
+#: Template/GamesUsers/add.ctp:33
+#: Template/GamesUsers/buy.ctp:36
+#: Template/GamesUsers/edit.ctp:34
+#: Template/GamesUsers/index.ctp:33
+#: Template/GamesUsers/view.ctp:34
+#: Template/Languages/add.ctp:33
+#: Template/Languages/edit.ctp:34
+#: Template/Languages/index.ctp:33
+#: Template/Languages/view.ctp:34
+#: Template/Platforms/add.ctp:33
+#: Template/Platforms/edit.ctp:34
+#: Template/Platforms/index.ctp:33
+#: Template/Platforms/view.ctp:34
+#: Template/Roles/add.ctp:33
+#: Template/Roles/edit.ctp:34
+#: Template/Roles/index.ctp:33
+#: Template/Roles/view.ctp:34
+#: Template/Tags/add.ctp:13
+#: Template/Tags/add.ctp:36
+#: Template/Tags/edit.ctp:14
+#: Template/Tags/edit.ctp:37
+#: Template/Tags/index.ctp:36
+#: Template/Tags/view.ctp:14
+#: Template/Tags/view.ctp:37
+#: Template/Users/add.ctp:36
+#: Template/Users/edit.ctp:39
+#: Template/Users/index.ctp:37
+#: Template/Users/view.ctp:39
+msgid "List all tags"
+msgstr ""
+
+#: Template/Games/add.ctp:34
+#: Template/Games/edit.ctp:34
+#: Template/Games/index.ctp:35
+#: Template/Games/view.ctp:36
+#: Template/GamesPlatforms/add.ctp:36
+#: Template/GamesPlatforms/edit.ctp:36
+#: Template/GamesPlatforms/index.ctp:35
+#: Template/GamesPlatforms/view.ctp:36
+#: Template/GamesTags/add.ctp:35
+#: Template/GamesTags/edit.ctp:36
+#: Template/GamesTags/index.ctp:35
+#: Template/GamesTags/view.ctp:36
+#: Template/GamesUsers/add.ctp:35
+#: Template/GamesUsers/buy.ctp:38
+#: Template/GamesUsers/edit.ctp:36
+#: Template/GamesUsers/index.ctp:35
+#: Template/GamesUsers/view.ctp:36
+#: Template/Languages/add.ctp:35
+#: Template/Languages/edit.ctp:36
+#: Template/Languages/index.ctp:35
+#: Template/Languages/view.ctp:36
+#: Template/Platforms/add.ctp:35
+#: Template/Platforms/edit.ctp:36
+#: Template/Platforms/index.ctp:35
+#: Template/Platforms/view.ctp:36
+#: Template/Roles/add.ctp:35
+#: Template/Roles/edit.ctp:36
+#: Template/Roles/index.ctp:35
+#: Template/Roles/view.ctp:36
+#: Template/Tags/add.ctp:38
+#: Template/Tags/edit.ctp:39
+#: Template/Tags/index.ctp:38
+#: Template/Tags/view.ctp:39
+#: Template/Users/edit.ctp:15
+#: Template/Users/index.ctp:13
+#: Template/Users/view.ctp:15
+msgid "Add a new user"
+msgstr ""
+
+#: Template/Games/add.ctp:35
+#: Template/Games/edit.ctp:35
+#: Template/Games/index.ctp:36
+#: Template/Games/view.ctp:37
+#: Template/GamesPlatforms/add.ctp:37
+#: Template/GamesPlatforms/edit.ctp:37
+#: Template/GamesPlatforms/index.ctp:36
+#: Template/GamesPlatforms/view.ctp:37
+#: Template/GamesTags/add.ctp:36
+#: Template/GamesTags/edit.ctp:37
+#: Template/GamesTags/index.ctp:36
+#: Template/GamesTags/view.ctp:37
+#: Template/GamesUsers/add.ctp:36
+#: Template/GamesUsers/buy.ctp:39
+#: Template/GamesUsers/edit.ctp:37
+#: Template/GamesUsers/index.ctp:36
+#: Template/GamesUsers/view.ctp:37
+#: Template/Languages/add.ctp:36
+#: Template/Languages/edit.ctp:37
+#: Template/Languages/index.ctp:36
+#: Template/Languages/view.ctp:37
+#: Template/Platforms/add.ctp:36
+#: Template/Platforms/edit.ctp:37
+#: Template/Platforms/index.ctp:36
+#: Template/Platforms/view.ctp:37
+#: Template/Roles/add.ctp:36
+#: Template/Roles/edit.ctp:37
+#: Template/Roles/index.ctp:36
+#: Template/Roles/view.ctp:37
+#: Template/Tags/add.ctp:39
+#: Template/Tags/edit.ctp:40
+#: Template/Tags/index.ctp:39
+#: Template/Tags/view.ctp:40
+#: Template/Users/add.ctp:13
+#: Template/Users/edit.ctp:16
+#: Template/Users/index.ctp:14
+#: Template/Users/view.ctp:16
+msgid "List all users"
+msgstr ""
+
+#: Template/Games/add.ctp:42
+msgid "Add Game"
+msgstr ""
+
+#: Template/Games/add.ctp:54
+#: Template/Games/edit.ctp:54
+#: Template/GamesPlatforms/add.ctp:50
+#: Template/GamesPlatforms/edit.ctp:50
+#: Template/GamesTags/add.ctp:49
+#: Template/GamesTags/edit.ctp:50
+#: Template/GamesUsers/add.ctp:50
+#: Template/GamesUsers/buy.ctp:56
+#: Template/GamesUsers/edit.ctp:51
+#: Template/Languages/add.ctp:48
+#: Template/Languages/edit.ctp:49
+#: Template/Platforms/add.ctp:49
+#: Template/Platforms/edit.ctp:50
+#: Template/Roles/add.ctp:48
+#: Template/Roles/edit.ctp:49
+#: Template/Tags/add.ctp:52
+#: Template/Tags/edit.ctp:53
+#: Template/Users/add.ctp:55
+#: Template/Users/edit.ctp:61
+#: Template/Users/sign_up.ctp:22
+msgid "Submit"
+msgstr ""
+
+#: Template/Games/edit.ctp:42
+#: Template/Users/edit.ctp:49
+msgid "Edit "
+msgstr ""
+
+#: Template/Games/index.ctp:40
+msgid "My account"
+msgstr ""
+
+#: Template/Games/index.ctp:50
+msgid "Games"
+msgstr ""
+
+#: Template/Games/index.ctp:59
+#: Template/Games/view.ctp:81
+#: Template/Games/view.ctp:102
+#: Template/Games/view.ctp:135
+#: Template/GamesPlatforms/index.ctp:48
+#: Template/GamesTags/add.ctp:9
+#: Template/GamesTags/index.ctp:48
+#: Template/GamesUsers/edit.ctp:9
+#: Template/GamesUsers/index.ctp:48
+#: Template/GamesUsers/view.ctp:9
+#: Template/Languages/index.ctp:49
+#: Template/Languages/view.ctp:85
+#: Template/Platforms/index.ctp:47
+#: Template/Platforms/view.ctp:71
+#: Template/Roles/index.ctp:47
+#: Template/Roles/view.ctp:77
+#: Template/Tags/index.ctp:50
+#: Template/Tags/view.ctp:74
+#: Template/Users/index.ctp:53
+#: Template/Users/view.ctp:98
+msgid "Actions"
+msgstr ""
+
+#: Template/Games/index.ctp:75
+#: Template/Games/index.ctp:83
+msgid "[Buy]"
+msgstr ""
+
+#: Template/Games/index.ctp:77
+#: Template/Games/index.ctp:85
+#: Template/Games/index.ctp:87
+#: Template/Games/view.ctp:87
+#: Template/Games/view.ctp:108
+#: Template/Games/view.ctp:149
+#: Template/GamesUsers/index.ctp:58
+#: Template/Users/index.ctp:67
+#: Template/Users/view.ctp:112
+#: Template/Users/view.ctp:120
+msgid "[More details]"
+msgstr ""
+
+#: Template/Games/index.ctp:79
+#: Template/Games/view.ctp:48
+#: Template/Games/view.ctp:88
+#: Template/Games/view.ctp:109
+#: Template/Games/view.ctp:151
+#: Template/GamesPlatforms/view.ctp:45
+#: Template/GamesTags/view.ctp:45
+#: Template/GamesUsers/index.ctp:59
+#: Template/GamesUsers/view.ctp:45
+#: Template/Languages/view.ctp:45
+#: Template/Platforms/view.ctp:45
+#: Template/Roles/view.ctp:45
+#: Template/Tags/view.ctp:48
+#: Template/Users/index.ctp:68
+#: Template/Users/view.ctp:56
+msgid "[Edit]"
+msgstr ""
+
+#: Template/Games/index.ctp:81
+#: Template/Games/view.ctp:50
+#: Template/Games/view.ctp:89
+#: Template/Games/view.ctp:110
+#: Template/Games/view.ctp:153
+#: Template/GamesPlatforms/view.ctp:47
+#: Template/GamesTags/view.ctp:47
+#: Template/GamesUsers/index.ctp:60
+#: Template/GamesUsers/view.ctp:47
+#: Template/Languages/view.ctp:47
+#: Template/Platforms/view.ctp:47
+#: Template/Roles/view.ctp:47
+#: Template/Tags/view.ctp:50
+#: Template/Users/index.ctp:69
+#: Template/Users/view.ctp:57
+msgid "[Delete]"
+msgstr ""
+
+#: Template/Games/index.ctp:81
+#: Template/Games/view.ctp:50
+#: Template/Games/view.ctp:89
+#: Template/Games/view.ctp:110
+#: Template/Games/view.ctp:153
+#: Template/GamesPlatforms/index.ctp:60
+#: Template/GamesPlatforms/view.ctp:47
+#: Template/GamesTags/index.ctp:60
+#: Template/GamesTags/view.ctp:47
+#: Template/GamesUsers/index.ctp:60
+#: Template/GamesUsers/view.ctp:47
+#: Template/Languages/index.ctp:62
+#: Template/Languages/view.ctp:47
+#: Template/Languages/view.ctp:104
+#: Template/Platforms/index.ctp:58
+#: Template/Platforms/view.ctp:47
+#: Template/Platforms/view.ctp:84
+#: Template/Roles/index.ctp:58
+#: Template/Roles/view.ctp:47
+#: Template/Roles/view.ctp:96
+#: Template/Tags/index.ctp:61
+#: Template/Tags/view.ctp:50
+#: Template/Tags/view.ctp:87
+#: Template/Users/index.ctp:69
+#: Template/Users/view.ctp:57
+#: Template/Users/view.ctp:116
+msgid "Are you sure you want to delete # {0}?"
+msgstr ""
+
+#: Template/Games/index.ctp:97
+#: Template/GamesPlatforms/index.ctp:68
+#: Template/GamesTags/index.ctp:68
+#: Template/GamesUsers/index.ctp:68
+#: Template/Languages/index.ctp:70
+#: Template/Platforms/index.ctp:66
+#: Template/Roles/index.ctp:66
+#: Template/Tags/index.ctp:69
+#: Template/Users/index.ctp:77
+msgid "first"
+msgstr ""
+
+#: Template/Games/index.ctp:98
+#: Template/GamesPlatforms/index.ctp:69
+#: Template/GamesTags/index.ctp:69
+#: Template/GamesUsers/index.ctp:69
+#: Template/Languages/index.ctp:71
+#: Template/Platforms/index.ctp:67
+#: Template/Roles/index.ctp:67
+#: Template/Tags/index.ctp:70
+#: Template/Users/index.ctp:78
+msgid "previous"
+msgstr ""
+
+#: Template/Games/index.ctp:100
+#: Template/GamesPlatforms/index.ctp:71
+#: Template/GamesTags/index.ctp:71
+#: Template/GamesUsers/index.ctp:71
+#: Template/Languages/index.ctp:73
+#: Template/Platforms/index.ctp:69
+#: Template/Roles/index.ctp:69
+#: Template/Tags/index.ctp:72
+#: Template/Users/index.ctp:80
+msgid "next"
+msgstr ""
+
+#: Template/Games/index.ctp:101
+#: Template/GamesPlatforms/index.ctp:72
+#: Template/GamesTags/index.ctp:72
+#: Template/GamesUsers/index.ctp:72
+#: Template/Languages/index.ctp:74
+#: Template/Platforms/index.ctp:70
+#: Template/Roles/index.ctp:70
+#: Template/Tags/index.ctp:73
+#: Template/Users/index.ctp:81
+msgid "last"
+msgstr ""
+
+#: Template/Games/index.ctp:103
+#: Template/GamesPlatforms/index.ctp:74
+#: Template/GamesTags/index.ctp:74
+#: Template/GamesUsers/index.ctp:74
+#: Template/Languages/index.ctp:76
+#: Template/Platforms/index.ctp:72
+#: Template/Roles/index.ctp:72
+#: Template/Tags/index.ctp:75
+#: Template/Users/index.ctp:83
+msgid "Page {{page}} of {{pages}}, showing {{current}} record(s) out of {{count}} total"
+msgstr ""
+
+#: Template/Games/view.ctp:39
+#: Template/GamesUsers/add.ctp:11
+#: Template/GamesUsers/buy.ctp:13
+#: Template/GamesUsers/buy.ctp:41
+#: Template/GamesUsers/edit.ctp:11
+#: Template/GamesUsers/index.ctp:11
+#: Template/GamesUsers/view.ctp:11
+#: Template/Users/edit.ctp:41
+#: Template/Users/view.ctp:41
+msgid "Shop"
+msgstr ""
+
+#: Template/Games/view.ctp:55
+#: Template/Games/view.ctp:80
+#: Template/Games/view.ctp:101
+#: Template/Languages/view.ctp:52
+#: Template/Platforms/view.ctp:52
+#: Template/Platforms/view.ctp:66
+#: Template/Roles/view.ctp:52
+#: Template/Tags/view.ctp:55
+#: Template/Tags/view.ctp:69
+#: Template/Users/view.ctp:94
+msgid "Name"
+msgstr ""
+
+#: Template/Games/view.ctp:59
+#: Template/Platforms/view.ctp:69
+#: Template/Tags/view.ctp:72
+#: Template/Users/view.ctp:96
+msgid "Description"
+msgstr ""
+
+#: Template/Games/view.ctp:63
+#: Template/Platforms/view.ctp:67
+#: Template/Tags/view.ctp:70
+msgid "Price"
+msgstr ""
+
+#: Template/Games/view.ctp:67
+#: Template/Platforms/view.ctp:68
+#: Template/Tags/view.ctp:71
+#: Template/Users/view.ctp:95
+msgid "Number Of Players"
+msgstr ""
+
+#: Template/Games/view.ctp:71
+#: Template/Platforms/view.ctp:70
+#: Template/Tags/view.ctp:73
+#: Template/Users/view.ctp:97
+msgid "Release Date"
+msgstr ""
+
+#: Template/Games/view.ctp:76
+msgid "Playable in"
+msgstr ""
+
+#: Template/Games/view.ctp:97
+#: Template/Tags/index.ctp:44
+msgid "Tags"
+msgstr ""
+
+#: Template/Games/view.ctp:123
+msgid "Purchased by"
+msgstr ""
+
+#: Template/Games/view.ctp:127
+#: Template/Languages/view.ctp:74
+#: Template/Roles/view.ctp:66
+#: Template/Users/view.ctp:61
+msgid "Username"
+msgstr ""
+
+#: Template/Games/view.ctp:128
+#: Template/Languages/view.ctp:76
+#: Template/Roles/view.ctp:68
+#: Template/Users/view.ctp:65
+msgid "First Name"
+msgstr ""
+
+#: Template/Games/view.ctp:129
+#: Template/Languages/view.ctp:77
+#: Template/Roles/view.ctp:69
+#: Template/Users/view.ctp:69
+msgid "Last Name"
+msgstr ""
+
+#: Template/Games/view.ctp:130
+#: Template/Languages/view.ctp:78
+#: Template/Roles/view.ctp:70
+#: Template/Users/view.ctp:73
+msgid "Email"
+msgstr ""
+
+#: Template/Games/view.ctp:131
+#: Template/Languages/view.ctp:79
+#: Template/Roles/view.ctp:71
+#: Template/Users/view.ctp:77
+msgid "Phone"
+msgstr ""
+
+#: Template/Games/view.ctp:132
+#: Template/Languages/view.ctp:80
+#: Template/Roles/view.ctp:72
+#: Template/Users/view.ctp:81
+msgid "Address"
+msgstr ""
+
+#: Template/GamesPlatforms/add.ctp:15
+#: Template/GamesPlatforms/edit.ctp:16
+#: Template/GamesPlatforms/index.ctp:15
+#: Template/GamesPlatforms/view.ctp:16
+#: Template/GamesTags/add.ctp:15
+#: Template/GamesTags/edit.ctp:16
+#: Template/GamesTags/index.ctp:15
+#: Template/GamesTags/view.ctp:16
+#: Template/GamesUsers/add.ctp:15
+#: Template/GamesUsers/buy.ctp:18
+#: Template/GamesUsers/edit.ctp:16
+#: Template/GamesUsers/index.ctp:15
+#: Template/GamesUsers/view.ctp:16
+#: Template/Languages/add.ctp:15
+#: Template/Languages/edit.ctp:16
+#: Template/Languages/index.ctp:15
+#: Template/Languages/view.ctp:16
+#: Template/Platforms/add.ctp:15
+#: Template/Platforms/edit.ctp:16
+#: Template/Platforms/index.ctp:15
+#: Template/Platforms/view.ctp:16
+#: Template/Roles/add.ctp:15
+#: Template/Roles/edit.ctp:16
+#: Template/Roles/index.ctp:15
+#: Template/Roles/view.ctp:16
+#: Template/Tags/add.ctp:15
+#: Template/Tags/edit.ctp:16
+#: Template/Tags/index.ctp:15
+#: Template/Tags/view.ctp:16
+#: Template/Users/add.ctp:15
+#: Template/Users/edit.ctp:18
+#: Template/Users/index.ctp:16
+#: Template/Users/view.ctp:18
+msgid "Add a new game"
+msgstr ""
+
+#: Template/GamesPlatforms/add.ctp:44
+msgid "Add Games Platform"
+msgstr ""
+
+#: Template/GamesPlatforms/edit.ctp:44
+msgid "Edit Games Platform"
+msgstr ""
+
+#: Template/GamesPlatforms/index.ctp:41
+msgid "Games Platforms"
+msgstr ""
+
+#: Template/GamesPlatforms/index.ctp:58
+#: Template/GamesTags/index.ctp:58
+#: Template/Languages/index.ctp:60
+#: Template/Languages/view.ctp:102
+#: Template/Platforms/index.ctp:56
+#: Template/Platforms/view.ctp:82
+#: Template/Roles/index.ctp:56
+#: Template/Roles/view.ctp:94
+#: Template/Tags/index.ctp:59
+#: Template/Tags/view.ctp:85
+msgid "View"
+msgstr ""
+
+#: Template/GamesPlatforms/index.ctp:59
+#: Template/GamesTags/index.ctp:59
+#: Template/Languages/index.ctp:61
+#: Template/Languages/view.ctp:103
+#: Template/Platforms/index.ctp:57
+#: Template/Platforms/view.ctp:83
+#: Template/Roles/index.ctp:57
+#: Template/Roles/view.ctp:95
+#: Template/Tags/index.ctp:60
+#: Template/Tags/view.ctp:86
+#: Template/Users/view.ctp:114
+msgid "Edit"
+msgstr ""
+
+#: Template/GamesPlatforms/index.ctp:60
+#: Template/GamesTags/index.ctp:60
+#: Template/Languages/index.ctp:62
+#: Template/Languages/view.ctp:104
+#: Template/Platforms/index.ctp:58
+#: Template/Platforms/view.ctp:84
+#: Template/Roles/index.ctp:58
+#: Template/Roles/view.ctp:96
+#: Template/Tags/index.ctp:61
+#: Template/Tags/view.ctp:87
+#: Template/Users/view.ctp:116
+msgid "Delete"
+msgstr ""
+
+#: Template/GamesPlatforms/view.ctp:52
+#: Template/GamesTags/view.ctp:52
+#: Template/GamesUsers/view.ctp:56
+msgid "Game"
+msgstr ""
+
+#: Template/GamesPlatforms/view.ctp:56
+msgid "Platform"
+msgstr ""
+
+#: Template/GamesPlatforms/view.ctp:60
+#: Template/GamesTags/view.ctp:60
+#: Template/GamesUsers/view.ctp:60
+#: Template/Languages/view.ctp:56
+#: Template/Languages/view.ctp:73
+#: Template/Platforms/view.ctp:56
+#: Template/Platforms/view.ctp:65
+#: Template/Roles/view.ctp:56
+#: Template/Roles/view.ctp:65
+#: Template/Tags/view.ctp:59
+#: Template/Tags/view.ctp:68
+msgid "Id"
+msgstr ""
+
+#: Template/GamesTags/add.ctp:43
+msgid "Add Games Tag"
+msgstr ""
+
+#: Template/GamesTags/edit.ctp:44
+msgid "Edit Games Tag"
+msgstr ""
+
+#: Template/GamesTags/index.ctp:41
+msgid "Games Tags"
+msgstr ""
+
+#: Template/GamesTags/view.ctp:56
+msgid "Tag"
+msgstr ""
+
+#: Template/GamesUsers/add.ctp:43
+msgid "Add Games User"
+msgstr ""
+
+#: Template/GamesUsers/buy.ctp:49
+msgid "Buy "
+msgstr ""
+
+#: Template/GamesUsers/edit.ctp:44
+msgid "Edit Purchase"
+msgstr ""
+
+#: Template/GamesUsers/index.ctp:41
+msgid "Purchases"
+msgstr ""
+
+#: Template/GamesUsers/view.ctp:52
+msgid "User"
+msgstr ""
+
+#: Template/GamesUsers/view.ctp:64
+msgid "Quantity"
+msgstr ""
+
+#: Template/Languages/add.ctp:43
+msgid "Add Language"
+msgstr ""
+
+#: Template/Languages/edit.ctp:44
+msgid "Edit Language"
+msgstr ""
+
+#: Template/Languages/index.ctp:41
+msgid "Languages"
+msgstr ""
+
+#: Template/Languages/view.ctp:60
+#: Template/Languages/view.ctp:83
+#: Template/Roles/view.ctp:75
+msgid "Created"
+msgstr ""
+
+#: Template/Languages/view.ctp:64
+#: Template/Languages/view.ctp:84
+#: Template/Roles/view.ctp:76
+msgid "Modified"
+msgstr ""
+
+#: Template/Languages/view.ctp:69
+#: Template/Roles/view.ctp:61
+msgid "Related Users"
+msgstr ""
+
+#: Template/Languages/view.ctp:75
+#: Template/Roles/view.ctp:67
+msgid "Password"
+msgstr ""
+
+#: Template/Languages/view.ctp:81
+#: Template/Roles/view.ctp:73
+msgid "Language Id"
+msgstr ""
+
+#: Template/Languages/view.ctp:82
+#: Template/Roles/view.ctp:74
+msgid "Role Id"
+msgstr ""
+
+#: Template/Layout/error.ctp:35
+msgid "Error"
+msgstr ""
+
+#: Template/Layout/error.ctp:43
+msgid "Back"
+msgstr ""
+
+#: Template/Platforms/add.ctp:43
+msgid "Add Platform"
+msgstr ""
+
+#: Template/Platforms/edit.ctp:44
+msgid "Edit Platform"
+msgstr ""
+
+#: Template/Platforms/index.ctp:41
+msgid "Platforms"
+msgstr ""
+
+#: Template/Platforms/view.ctp:61
+#: Template/Tags/view.ctp:64
+msgid "Related Games"
+msgstr ""
+
+#: Template/Roles/add.ctp:43
+msgid "Add Role"
+msgstr ""
+
+#: Template/Roles/edit.ctp:44
+msgid "Edit Role"
+msgstr ""
+
+#: Template/Roles/index.ctp:41
+msgid "Roles"
+msgstr ""
+
+#: Template/Tags/add.ctp:46
+msgid "Add Tag"
+msgstr ""
+
+#: Template/Tags/edit.ctp:47
+msgid "Edit Tag"
+msgstr ""
+
+#: Template/Users/add.ctp:43
+msgid "Add User"
+msgstr ""
+
+#: Template/Users/index.ctp:42
+msgid "Users"
+msgstr ""
+
+#: Template/Users/sign_up.ctp:10
+msgid "Sign up"
+msgstr ""
+
+#: Template/Users/view.ctp:85
+msgid "Language"
+msgstr ""
+
+#: Template/Users/view.ctp:90
+msgid "Game library"
+msgstr ""
+

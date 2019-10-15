@@ -1,0 +1,30 @@
+/*Games*/
+successful_add_game_save = The game has been saved.
+unsuccessful_add_game_save = The game could not be saved. Please, try again.
+successful_edit_game_save = The game has been saved.
+unsuccessful_edit_game_save = The game could not be saved. Please, try again.
+successful_game_delete = The game has been deleted.
+unsuccessful_game_delete = The game could not be deleted. Please, try again.
+
+/*Games Platforms*/
+successful_add_purchase_save = The purchase has been saved.
+unsuccessful_add_purchase_save = The purchase could not be saved. Please, try again.
+successful_edit_purchase_save = The purchase has been saved.
+unsuccessful_edit_purchase_save = The purchase could not be saved. Please, try again.
+successful_purchase_delete = The games platform has been deleted.
+unsuccessful_purchase_delete = The games platform could not be deleted. Please, try again.
+
+
+successful_taggedgame_save = The game was tagged.
+unsuccessful_taggedgame_save = The game could not be tagged. Please, try again.
+
+/*Games Users*/
+successful_add_purchase_save = The purchase has been saved.
+unsuccessful_add_purchase_save = The purchase could not be saved. Please, try again.
+successful_edit_purchase_save = The purchase has been saved.
+unsuccessful_edit_purchase_save = The purchase could not be saved. Please, try again.
+successful_purchase_delete = The games platform has been deleted.
+unsuccessful_purchase_delete = The games platform could not be deleted. Please, try again.
+successful_taggedgame_save = The game was tagged.
+unsuccessful_taggedgame_save = The game could not be tagged. Please, try again.
+
