@@ -38,6 +38,11 @@ class GamesTable extends Table
         $this->setDisplayField('name');
         $this->setPrimaryKey('id');
 
+        $this->belongsToMany('Files', [
+            'foreignKey' => 'game_id',
+            'targetForeignKey' => 'file_id',
+            'joinTable' => 'files_games'
+        ]);
         $this->belongsToMany('Platforms', [
             'foreignKey' => 'game_id',
             'targetForeignKey' => 'platform_id',
