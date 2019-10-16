@@ -34,10 +34,16 @@
 
                 echo '<li>' . $this->Html->link(__('Add a new user'), ['controller' => 'Users', 'action' => 'add']) . '</li>';
                 echo '<li>' . $this->Html->link(__('List all users'), ['controller' => 'Users', 'action' => 'index']) . '</li>';
+
+                echo '<li>' . $this->Html->link(__('List all files'), ['controller' => 'Files', 'action' => 'index']) . '</li>';
+                echo '<li>' . $this->Html->link(__('Add a new file'), ['controller' => 'Files', 'action' => 'add']) . '</li>';
             } 
             // Client
             else if ($loggedUser['role_id'] === 3) {
                 echo '<li>' . $this->Html->link(__('My account'), ['controller' => 'Users', 'action' => 'view', $loggedUser['id']]) . '</li>';
+
+                echo '<li>' . $this->Html->link(__('List all files'), ['controller' => 'Files', 'action' => 'index']) . '</li>';
+                echo '<li>' . $this->Html->link(__('Add a new file'), ['controller' => 'Files', 'action' => 'add']) . '</li>';
             }
             // Visitor
             else {

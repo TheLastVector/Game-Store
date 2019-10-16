@@ -41,7 +41,7 @@ class GamesController extends AppController
     public function view($id = null)
     {
         $game = $this->Games->get($id, [
-            'contain' => ['Platforms', 'Tags', 'Users']
+            'contain' => ['Platforms', 'Tags', 'Users', 'Files']
         ]);
 
         $this->set('game', $game);

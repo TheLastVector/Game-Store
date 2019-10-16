@@ -35,8 +35,14 @@
 
                 echo '<li>' . $this->Html->link(__('Add a new user'), ['controller' => 'Users', 'action' => 'add']) . '</li>';
                 echo '<li>' . $this->Html->link(__('List all users'), ['controller' => 'Users', 'action' => 'index']) . '</li>';
+
+                echo '<li>' . $this->Html->link(__('List all files'), ['controller' => 'Files', 'action' => 'index']) . '</li>';
+                echo '<li>' . $this->Html->link(__('Add a new file'), ['controller' => 'Files', 'action' => 'add']) . '</li>';
             } else {
                 echo '<li>' . $this->Html->link(__('Shop'), ['action' => 'index']) . '</li>';
+
+                echo '<li>' . $this->Html->link(__('List all files'), ['controller' => 'Files', 'action' => 'index']) . '</li>';
+                echo '<li>' . $this->Html->link(__('Add a new file'), ['controller' => 'Files', 'action' => 'add']) . '</li>';
             }
         ?>
     </ul>
@@ -72,6 +78,27 @@
             <td><?= h($game->release_date) ?></td>
         </tr>
     </table>
+    <div class="related">
+        <h4><?= __('Related Files') ?></h4>
+        <?php if (!empty($game->files)): ?>
+            <table cellpadding="0" cellspacing="0">
+                <tr>
+                    <th scope="col"><?= __('Image') ?></th>
+                </tr>
+                <?php foreach ($game->files as $files): ?>
+                    <tr>
+                        <td>
+                            <?php
+                            echo $this->Html->image($files->path . $files->name, [
+                                "alt" => $files->name,
+                            ]);
+                            ?>
+                        </td>
+                    </tr>
+                <?php endforeach; ?>
+            </table>
+        <?php endif; ?>
+    </div>
     <div class="related">
         <h4><?= __('Playable in') ?></h4>
         <?php if (!empty($game->platforms)): ?>
