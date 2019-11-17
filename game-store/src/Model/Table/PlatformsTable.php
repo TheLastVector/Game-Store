@@ -41,6 +41,8 @@ class PlatformsTable extends Table
             'targetForeignKey' => 'game_id',
             'joinTable' => 'games_platforms'
         ]);
+
+        $this->hasMany('Subplatforms', ['foreignKey' => 'platform_id']);
     }
 
     /**

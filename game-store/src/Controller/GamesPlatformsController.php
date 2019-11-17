@@ -60,9 +60,22 @@ class GamesPlatformsController extends AppController
             }
             $this->Flash->error(__('The platform association to the game could not be saved. Please, try again.'));
         }
+
+
         $games = $this->GamesPlatforms->Games->find('list', ['limit' => 200]);
+
+        // Bâtir la liste des plateformes
+        $this->loadModel('Platforms');
         $platforms = $this->GamesPlatforms->Platforms->find('list', ['limit' => 200]);
-        $this->set(compact('gamesPlatform', 'games', 'platforms'));
+
+        // Extraire l'id de la première plateforme
+        $platforms = $platforms->toArray();
+        reset($platforms);
+        $platform_id = key($platforms);
+
+        $subplatforms = $this->Platforms->Subplatforms->find('list', ['conditions' => ['Subplatforms.platform_id' => $platform_id]]);
+
+        $this->set(compact('gamesPlatform', 'games', 'platforms', 'subplatforms'));
     }
 
     /**

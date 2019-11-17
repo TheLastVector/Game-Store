@@ -43,6 +43,12 @@ echo '<li>' . $this->Form->postLink(__('[Delete]'), ['action' => 'delete', $plat
 echo '<li>' . $this->Html->link(__('Add a new platform'), ['controller' => 'Platforms', 'action' => 'add']) . '</li>';
 echo '<li>' . $this->Html->link(__('List all platforms'), ['controller' => 'Platforms', 'action' => 'index']) . '</li>';
 
+/* Subplatforms */
+echo '<li>' . $this->Html->link(__('[Edit]'), ['action' => 'edit', $subplatform->id]) . '</li>';
+echo '<li>' . $this->Form->postLink(__('[Delete]'), ['action' => 'delete', $subplatform->id], ['confirm' => __('Are you sure you want to delete # {0}?', $subplatform->id)]) . '</li>';
+echo '<li>' . $this->Html->link(__('Add a new subplatform'), ['controller' => 'Subplatforms', 'action' => 'add']) . '</li>';
+echo '<li>' . $this->Html->link(__('List all subplatforms'), ['controller' => 'Subplatforms', 'action' => 'index']) . '</li>';
+
 /* Roles */
 echo '<li>' . $this->Html->link(__('[Edit]'), ['action' => 'edit', $role->id]) . '</li>';
 echo '<li>' . $this->Form->postLink(__('[Delete]'), ['action' => 'delete', $role->id], ['confirm' => __('Are you sure you want to delete # {0}?', $role->id)]) . '</li>';

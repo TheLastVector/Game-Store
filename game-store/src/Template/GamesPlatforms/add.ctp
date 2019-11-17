@@ -1,9 +1,20 @@
 <?php
+    $urlToLinkedListFilter = $this->Url->build([
+        "controller" => "Subplatforms",
+        "action" => "getByPlatform",
+        "_ext" => "json"
+    ]);
+    echo $this->Html->scriptBlock('var urlToLinkedListFilter = "' . $urlToLinkedListFilter . '";', ['block' => true]);
+    echo $this->Html->script('GamesPlatforms/handle-list-of-platforms', ['block' => 'scriptBottom']);
+?>
+
+<?php
 /**
  * @var \App\View\AppView $this
  * @var \App\Model\Entity\GamesPlatform $gamesPlatform
  */
 ?>
+
 <nav class="large-3 medium-4 columns" id="actions-sidebar">
     <ul class="side-nav">
         <li class="heading"><?= __('Menu') ?></li>
@@ -12,8 +23,10 @@
 
             echo '<li>' . $this->Html->link(__('List all games and their platforms'), ['controller' => 'GamesPlatforms', 'action' => 'index']) . '</li>';
 
-            echo '<li>' . $this->Html->link(__('Add a new game'), ['controller' => 'Games', 'action' => 'add']) . '</li>';
+            echo '<li>' . $this->Html->link(__('Add a new subplatform'), ['controller' => 'Subplatforms', 'action' => 'add']) . '</li>';
+            echo '<li>' . $this->Html->link(__('List all subplatforms'), ['controller' => 'Subplatforms', 'action' => 'index']) . '</li>';
 
+            echo '<li>' . $this->Html->link(__('Add a new game'), ['controller' => 'Games', 'action' => 'add']) . '</li>';
 
             echo '<li>' . $this->Html->link(__('Tag a game'), ['controller' => 'GamesTags', 'action' => 'add']) . '</li>';
             echo '<li>' . $this->Html->link(__('List all games and their tags'), ['controller' => 'GamesTags', 'action' => 'index']) . '</li>';
@@ -45,6 +58,7 @@
         <?php
             echo $this->Form->control('game_id', ['options' => $games]);
             echo $this->Form->control('platform_id', ['options' => $platforms]);
+            echo $this->Form->control('subplatform_id', ['option' => $subplatforms]);
         ?>
     </fieldset>
     <?= $this->Form->button(__('Submit')) ?>

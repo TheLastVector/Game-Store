@@ -4,14 +4,15 @@ namespace App\Model\Entity;
 use Cake\ORM\Entity;
 
 /**
- * Platform Entity
+ * Subplatform Entity
  *
  * @property int $id
+ * @property int $platform_id
  * @property string $name
  *
- * @property \App\Model\Entity\Game[] $games
+ * @property \App\Model\Entity\Platform $platform
  */
-class Platform extends Entity
+class Subplatform extends Entity
 {
     /**
      * Fields that can be mass assigned using newEntity() or patchEntity().
@@ -23,8 +24,9 @@ class Platform extends Entity
      * @var array
      */
     protected $_accessible = [
+        'platform_id' => true,
         'name' => true,
-        'games' => true,
-        'subplatforms' => true
+        'platform' => true,
+        'games' => true
     ];
 }

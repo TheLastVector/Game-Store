@@ -13,6 +13,9 @@
             echo '<li>' . $this->Html->link(__('Associate a platform to a game'), ['controller' => 'GamesPlatforms', 'action' => 'add']) . '</li>';
             echo '<li>' . $this->Html->link(__('List all games and their platforms'), ['controller' => 'GamesPlatforms', 'action' => 'index']) . '</li>';
 
+            echo '<li>' . $this->Html->link(__('Add a new subplatform'), ['controller' => 'Subplatforms', 'action' => 'add']) . '</li>';
+            echo '<li>' . $this->Html->link(__('List all subplatforms'), ['controller' => 'Subplatforms', 'action' => 'index']) . '</li>';
+
             echo '<li>' . $this->Html->link(__('Add a new game'), ['controller' => 'Games', 'action' => 'add']) . '</li>';
 
             echo '<li>' . $this->Html->link(__('Tag a game'), ['controller' => 'GamesTags', 'action' => 'add']) . '</li>';

@@ -11,6 +11,8 @@
             $loggedUser = $this->request->getSession()->read('Auth.User');
             // Administrator & Staff
             if ($loggedUser['role_id'] === 1 || $loggedUser['role_id'] === 2) {
+                echo '<li>' . $this->Html->link(__('Search games'), ['controller' => 'Games', 'action' => 'findGames']) . '</li>';
+
                 echo '<li>' . $this->Html->link(__('Associate a platform to a game'), ['controller' => 'GamesPlatforms', 'action' => 'add']) . '</li>';
                 echo '<li>' . $this->Html->link(__('List all games and their platforms'), ['controller' => 'GamesPlatforms', 'action' => 'index']) . '</li>';
 
@@ -72,25 +74,27 @@
                 <td><?= $this->Number->format($game->price) ?> $</td>
                 <td><?= $this->Number->format($game->number_of_players) ?></td>
                 <td><?= h($game->description) ?></td>
-                <td><?= h($game->release_date) ?></td>
+                <td><?= h(substr($game->release_date, 0, 2) . '/' . substr($game->release_date, 2, 2) . '/' . substr($game->release_date, 4, 4)) ?></td>
                 <td class="actions">
                     <?php 
                         $loggedUser = $this->request->getSession()->read('Auth.User');
 
+                        /*['class' => 'button', 'target' => '_blank'] Pour afficher dans une autre page*/
+
                         if ($loggedUser['role_id'] === 1 || $loggedUser['role_id'] === 2) {
-                            echo $this->Html->link(__('[Buy]'), ['action' => 'buy', $game->id]);
+                            echo $this->Html->link(__('Buy'), ['action' => 'buy', $game->id], ['class' => 'button']);
                             echo ' ';
-                            echo $this->Html->link(__('[More details]'), ['action' => 'view', $game->id]);
+                            echo $this->Html->link(__('More details'), ['action' => 'view', $game->id], ['class' => 'button']);
                             echo ' ';
-                            echo $this->Html->link(__('[Edit]'), ['action' => 'edit', $game->id]);
+                            echo $this->Html->link(__('Edit'), ['action' => 'edit', $game->id], ['class' => 'button']);
                             echo ' ';
-                            echo $this->Form->postLink(__('[Delete]'), ['action' => 'delete', $game->id], ['confirm' => __('Are you sure you want to delete # {0}?', $game->id)]);
+                            echo $this->Form->postLink(__('Delete'), ['action' => 'delete', $game->id],['class' => 'button'], ['confirm' => __('Are you sure you want to delete # {0}?', $game->id)]);
                         } else if ($loggedUser['role_id'] === 3) {
-                            echo $this->Html->link(__('[Buy]'), ['action' => 'buy', $game->id]);
+                            echo $this->Html->link(__('Buy'), ['action' => 'buy', $game->id], ['class' => 'button']);
                             echo ' ';
-                            echo $this->Html->link(__('[More details]'), ['action' => 'view', $game->id]);
+                            echo $this->Html->link(__('More details'), ['action' => 'view', $game->id], ['class' => 'button']);
                         } else {
-                            echo $this->Html->link(__('[More details]'), ['action' => 'view', $game->id]);
+                            echo $this->Html->link(__('More details'), ['action' => 'view', $game->id], ['class' => 'button']);
                         }
                     ?>
                 </td>

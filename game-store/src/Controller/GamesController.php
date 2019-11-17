@@ -15,7 +15,7 @@ class GamesController extends AppController
     public function initialize()
     {
         parent::initialize();
-        $this->Auth->allow(['index', 'view']);
+        $this->Auth->allow(['index', 'view', 'findGames']);
         /*$this->Auth->deny(['index']);*/
     }
 
@@ -47,6 +47,30 @@ class GamesController extends AppController
         $this->set('game', $game);
     }
 
+    /**
+     * findCar method
+     * for use with JQuery-UI Autocomplete
+     *
+     * @return JSon query result
+     */
+    public function findGames() {
+
+        if ($this->request->is('ajax')) {
+
+            $this->autoRender = false;
+            $name = $this->request->query['term'];
+            $results = $this->Games->find('all', array(
+                'conditions' => array('Games.name LIKE ' => '%' . $name . '%')
+            ));
+
+            $resultArr = array();
+            foreach ($results as $result) {
+                $resultArr[] = array('label' => $result['name'], 'value' => $result['name']);
+            }
+            echo json_encode($resultArr);
+        }
+    }
+
     public function buy($id = null) {
         $game = $this->Games->get($id, [
             'contain' => ['Platforms', 'Tags', 'Users']
@@ -74,7 +98,7 @@ class GamesController extends AppController
         }
         $platforms = $this->Games->Platforms->find('list', ['limit' => 200]);
         $tags = $this->Games->Tags->find('list', ['limit' => 200]);
-        $users = $this->Games->Users->find('list', ['limit' => 200]);
+        $users = $this->Games->Users->find('list', ['limit' => 200, 'valueField' => 'username']);
         $this->set(compact('game', 'platforms', 'tags', 'users'));
     }
 
@@ -101,7 +125,9 @@ class GamesController extends AppController
         }
         $platforms = $this->Games->Platforms->find('list', ['limit' => 200]);
         $tags = $this->Games->Tags->find('list', ['limit' => 200]);
-        $users = $this->Games->Users->find('list', ['limit' => 200]);
+        $users = $this->Games->Users->find('list', ['limit' => 200, 'valueField' => 'username']);
+        /*debug($users);
+        die;*/
         $this->set(compact('game', 'platforms', 'tags', 'users'));
     }
 
