@@ -37,8 +37,12 @@
 
                 echo '<li>' . $this->Html->link(__('Add a new tag'), ['controller' => 'Tags', 'action' => 'add']) . '</li>';
                 echo '<li>' . $this->Html->link(__('List all tags'), ['controller' => 'Tags', 'action' => 'index']) . '</li>';
+
+                echo '<li>' . $this->Html->link(__('About'), ['controller' => 'About', 'action' => 'index']) . '</li>';
             } else {
                 echo '<li>' . $this->Html->link(__('Shop'), ['controller' => 'Games', 'action' => 'index']) . '</li>';
+
+                echo '<li>' . $this->Html->link(__('About'), ['controller' => 'About', 'action' => 'index']) . '</li>';
             }
         ?>
     </ul>

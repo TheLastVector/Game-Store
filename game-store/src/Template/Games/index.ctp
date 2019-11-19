@@ -52,14 +52,13 @@
             }
             // Visitor
             else {
-
+                echo '<li>' . $this->Html->link(__('Login'), ['controller' => 'Users', 'action' => 'login']) . '</li>';
             }
         ?>
     </ul>
 <?php $this->end(); ?>
 
 <?php $this->assign('tb_sidebar', '<ul class="nav nav-sidebar">' . $this->fetch('tb_actions') . '</ul>'); ?>
-
 
 <table class="table table-striped" cellpadding="0" cellspacing="0">
         <thead>
@@ -89,17 +88,17 @@
                         if ($loggedUser['role_id'] === 1 || $loggedUser['role_id'] === 2) {
                             echo $this->Html->link(__('Buy'), ['action' => 'buy', $game->id], ['class' => 'button']);
                             echo ' ';
-                            echo $this->Html->link(__('More details'), ['action' => 'view', $game->id], ['class' => 'button']);
+                            echo $this->Html->link(__('More details'), ['action' => 'view', $game->id], ['title' => __('View'), 'class' => 'btn btn-default glyphicon glyphicon-eye-open']);
                             echo ' ';
-                            echo $this->Html->link(__('Edit'), ['action' => 'edit', $game->id], ['class' => 'button']);
+                            echo $this->Html->link(__(''), ['action' => 'edit', $game->id], ['title' => __('Edit'), 'class' => 'btn btn-default glyphicon glyphicon-pencil']);
                             echo ' ';
-                            echo $this->Form->postLink(__('Delete'), ['action' => 'delete', $game->id], ['class' => 'button'], ['confirm' => __('Are you sure you want to delete # {0}?', $game->id)]);
+                            echo $this->Form->postLink(__(''), ['action' => 'delete', $game->id], ['confirm' => __('Are you sure you want to delete # {0}?', $game->id), 'title' => __('Delete'), 'class' => 'btn btn-default glyphicon glyphicon-trash']);
                         } else if ($loggedUser['role_id'] === 3) {
                             echo $this->Html->link(__('Buy'), ['action' => 'buy', $game->id], ['class' => 'button']);
                             echo ' ';
-                            echo $this->Html->link(__('More details'), ['action' => 'view', $game->id], ['class' => 'button']);
+                            echo $this->Html->link(__(''), ['action' => 'view', $game->id], ['title' => __('View'), 'class' => 'btn btn-default glyphicon glyphicon-eye-open']);
                         } else {
-                            echo $this->Html->link(__('More details'), ['action' => 'view', $game->id], ['class' => 'button']);
+                            echo $this->Html->link(__(''), ['action' => 'view', $game->id], ['title' => __('View'), 'class' => 'btn btn-default glyphicon glyphicon-eye-open']);
                         }
                     ?>
                 </td>

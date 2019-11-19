@@ -38,11 +38,15 @@
 
                 echo '<li>' . $this->Html->link(__('List all files'), ['controller' => 'Files', 'action' => 'index']) . '</li>';
                 echo '<li>' . $this->Html->link(__('Add a new file'), ['controller' => 'Files', 'action' => 'add']) . '</li>';
+
+                echo '<li>' . $this->Html->link(__('About'), ['controller' => 'About', 'action' => 'index']) . '</li>';
             } else {
                 echo '<li>' . $this->Html->link(__('Shop'), ['action' => 'index']) . '</li>';
 
                 echo '<li>' . $this->Html->link(__('List all files'), ['controller' => 'Files', 'action' => 'index']) . '</li>';
                 echo '<li>' . $this->Html->link(__('Add a new file'), ['controller' => 'Files', 'action' => 'add']) . '</li>';
+
+                echo '<li>' . $this->Html->link(__('About'), ['controller' => 'About', 'action' => 'index']) . '</li>';
             }
         ?>
     </ul>
