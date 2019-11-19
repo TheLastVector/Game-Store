@@ -16,8 +16,16 @@ class GamesController extends AppController
     {
         parent::initialize();
         $this->Auth->allow(['index', 'view', 'findGames']);
+
+        $this->viewBuilder()->setLayout('default');
         /*$this->Auth->deny(['index']);*/
     }
+
+    public $paginate = [
+        'page' => 1,
+        'limit' => 5,
+        'maxLimit' => 150
+    ];
 
     /**
      * Index method

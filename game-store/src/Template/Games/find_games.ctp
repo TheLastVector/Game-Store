@@ -1,3 +1,5 @@
+<?php $this->extend('/Layout/TwitterBootstrap/dashboard'); ?>
+
 <?php
 $urlToGamesAutocompleteJson = $this->Url->build([
     "controller" => "Games",
@@ -8,13 +10,12 @@ echo $this->Html->scriptBlock('var urlToAutocompleteAction = "' . $urlToGamesAut
 echo $this->Html->script('Games/find-games', ['block' => 'scriptBottom']);
 ?>
 
-
-<nav class="large-3 medium-4 columns" id="actions-sidebar">
-    <ul class="side-nav">
+<?php $this->start('tb_actions'); ?>
         <li class="heading"><?= __('Menu') ?></li>
         <li><?= $this->Html->link(__('Shop'), ['controller' => 'Games', 'action' => 'index']) ?></li>
-    </ul>
-</nav>
+<?php $this->end(); ?>
+
+<?php $this->assign('tb_sidebar', '<ul class="nav nav-sidebar">' . $this->fetch('tb_actions') . '</ul>'); ?>
 
 <?= $this->Form->create('Games') ?>
 <fieldset>

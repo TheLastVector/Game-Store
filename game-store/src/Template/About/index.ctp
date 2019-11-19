@@ -15,11 +15,20 @@
         <br>
         2- Visiter le magasin de jeux [Cliquer sur shop].
         <br>
-        3- Acheter un jeu [Cliquer sur l'action buy].
+        3- Dans le menu de gauche appuyer sur "Search games"
         <br>
-        4- Entrer les informations d'achat demandées [Entrer une quantité de jeu à acheter].
+        4- Retourner dans le magasin en sélectionant "Magasin" dans le menu de gauche
         <br>
-        5- Vérifier dans son compte si le jeu fait bel et bien partie de sa librarie de jeux
+        5- Choisir dans le menu de gauche "Associer une plateforme à un jeu"
+        <br>
+        5- Choisir dans le menu de gauche "Associer une plateforme à un jeu"
+        <br>
+        6- Retourner dans le magasin
+        <br>
+        7- Choisir dans le menu de gauche "Lister tous les rôles"
+        <br>
+        8- Choisir dans le menu supérieur droit "Section admin en php"
+        <br>
     </p>
 
     <img src="..\images\Database model.JPG" alt="The model of this Application's database">

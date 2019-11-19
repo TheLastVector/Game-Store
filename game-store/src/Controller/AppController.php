@@ -42,6 +42,8 @@ class AppController extends Controller
     {
         parent::initialize();
 
+        $this->viewBuilder()->setLayout('default');
+
         I18n::setLocale($this->request->session()->read('Config.language'));
         $this->loadComponent('RequestHandler', [
             'enableBeforeRedirect' => false,

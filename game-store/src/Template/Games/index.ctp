@@ -8,7 +8,6 @@
 <?php $this->extend('/Layout/TwitterBootstrap/dashboard'); ?>
 
 <?php $this->start('tb_actions'); ?>
-<nav class="large-3 medium-4 columns" id="actions-sidebar">
         <?php 
             $loggedUser = $this->request->getSession()->read('Auth.User');
             // Administrator & Staff
@@ -55,7 +54,6 @@
                 echo '<li>' . $this->Html->link(__('Login'), ['controller' => 'Users', 'action' => 'login']) . '</li>';
             }
         ?>
-    </ul>
 <?php $this->end(); ?>
 
 <?php $this->assign('tb_sidebar', '<ul class="nav nav-sidebar">' . $this->fetch('tb_actions') . '</ul>'); ?>
@@ -88,7 +86,7 @@
                         if ($loggedUser['role_id'] === 1 || $loggedUser['role_id'] === 2) {
                             echo $this->Html->link(__('Buy'), ['action' => 'buy', $game->id], ['class' => 'button']);
                             echo ' ';
-                            echo $this->Html->link(__('More details'), ['action' => 'view', $game->id], ['title' => __('View'), 'class' => 'btn btn-default glyphicon glyphicon-eye-open']);
+                            echo $this->Html->link(__(''), ['action' => 'view', $game->id], ['title' => __('View'), 'class' => 'btn btn-default glyphicon glyphicon-eye-open']);
                             echo ' ';
                             echo $this->Html->link(__(''), ['action' => 'edit', $game->id], ['title' => __('Edit'), 'class' => 'btn btn-default glyphicon glyphicon-pencil']);
                             echo ' ';

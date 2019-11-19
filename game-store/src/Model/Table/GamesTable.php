@@ -58,6 +58,8 @@ class GamesTable extends Table
             'targetForeignKey' => 'user_id',
             'joinTable' => 'games_users'
         ]);
+
+        $this->addBehavior('Timestamp');
     }
 
     /**
