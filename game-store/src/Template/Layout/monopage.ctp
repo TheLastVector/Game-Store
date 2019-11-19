@@ -67,42 +67,6 @@ $cakeDescription = 'CakePHP: the rapid development php framework';
                 </li>
                 <li><a target="_blank" href="https://book.cakephp.org/3.0/">Documentation</a></li>
                 <li><a target="_blank" href="https://api.cakephp.org/3.0/">API</a></li>
-
-                <?php
-                    $loguser = $this->request->getSession()->read('Auth.User');
-                    if ($loguser) {
-                        $user = $loguser['username'];
-                        echo '<li>' . $this->Html->link('Home', ['controller' => 'Games', 'action' => 'index']) . '</li>';
-                        echo '<li>' . $this->Html->link($user, ['controller' => 'Users', 'action' => 'view', $loguser['id']]) . '</li>';
-                        echo '<li>' . $this->Html->link('About', ['controller' => 'About', 'action' => 'index']) . '</li>';
-                        echo '<li>' . $this->Html->link('English', ['action' => 'changeLang', 'en_US'], ['escape' => false]) . '</li>';
-                        echo '<li>' . $this->Html->link('Français', ['action' => 'changeLang', 'fr_CA'], ['escape' => false]) . '</li>';
-                        echo '<li>' . $this->Html->link('Portuguese', ['action' => 'changeLang', 'pt_BR'], ['escape' => false]) . '</li>';
-                        echo '<li>' . $this->Html->link('logout', ['controller' => 'Users', 'action' => 'logout']) . '</li>';
-                    } else {
-                        echo '<li>' . $this->Html->link('Home', ['controller' => 'Games', 'action' => 'index']) . '</li>';
-                        echo '<li>' . $this->Html->link('About', ['controller' => 'About', 'action' => 'index']) . '</li>';
-                        echo '<li>' . $this->Html->link('English', ['action' => 'changeLang', 'en_US'], ['escape' => false]) . '</li>';
-                        echo '<li>' . $this->Html->link('French', ['action' => 'changeLang', 'fr_CA'], ['escape' => false]) . '</li>';
-                        echo '<li>' . $this->Html->link('Portuguese', ['action' => 'changeLang', 'pt_BR'], ['escape' => false]) . '</li>';
-                            
-                        if ($this->request->getAttribute("here") !== '/Game-Store/game-store/users/login') {
-                            echo '<li>' . $this->Html->link('Login', ['controller' => 'Users', 'action' => 'login']) . '</li>';
-                        }
-
-                        if ($this->request->getAttribute("here") !== '/Game-Store/game-store/users/sign-up') {
-                            echo '<li>' . $this->Html->link('Sign up', ['controller' => 'Users', 'action' => 'signUp']) . '</li>';
-                        }
-                    }
-                ?>
-                <!-- <li>
-                    <?php 
-                        if ($this->request->getAttribute("here") === '/Game-Store/game-store/users/login') {
-                            echo 'It\'s inside.';
-                        }
-                        echo $this->request->getAttribute("here") 
-                    ?>
-                </li> -->
             </ul>
         </div>
     </nav>
@@ -117,4 +81,3 @@ $cakeDescription = 'CakePHP: the rapid development php framework';
     <?= $this->fetch('scriptBottom') ?> 
 </body>
 </html>
-

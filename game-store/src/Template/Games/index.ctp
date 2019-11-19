@@ -4,9 +4,11 @@
  * @var \App\Model\Entity\Game[]|\Cake\Collection\CollectionInterface $games
  */
 ?>
+
+<?php $this->extend('/Layout/TwitterBootstrap/dashboard'); ?>
+
+<?php $this->start('tb_actions'); ?>
 <nav class="large-3 medium-4 columns" id="actions-sidebar">
-    <ul class="side-nav">
-        <li class="heading"><?= __('Menu') ?></li>
         <?php 
             $loggedUser = $this->request->getSession()->read('Auth.User');
             // Administrator & Staff
@@ -39,6 +41,7 @@
 
                 echo '<li>' . $this->Html->link(__('List all files'), ['controller' => 'Files', 'action' => 'index']) . '</li>';
                 echo '<li>' . $this->Html->link(__('Add a new file'), ['controller' => 'Files', 'action' => 'add']) . '</li>';
+                echo '<li>' . $this->Html->link(__('About'), ['controller' => 'About', 'action' => 'index']) . '</li>';
             } 
             // Client
             else if ($loggedUser['role_id'] === 3) {
@@ -53,10 +56,12 @@
             }
         ?>
     </ul>
-</nav>
-<div class="games index large-9 medium-8 columns content">
-    <h3><?= __('Games') ?></h3>
-    <table cellpadding="0" cellspacing="0">
+<?php $this->end(); ?>
+
+<?php $this->assign('tb_sidebar', '<ul class="nav nav-sidebar">' . $this->fetch('tb_actions') . '</ul>'); ?>
+
+
+<table class="table table-striped" cellpadding="0" cellspacing="0">
         <thead>
             <tr>
                 <th scope="col"><?= $this->Paginator->sort('name') ?></th>
@@ -88,7 +93,7 @@
                             echo ' ';
                             echo $this->Html->link(__('Edit'), ['action' => 'edit', $game->id], ['class' => 'button']);
                             echo ' ';
-                            echo $this->Form->postLink(__('Delete'), ['action' => 'delete', $game->id],['class' => 'button'], ['confirm' => __('Are you sure you want to delete # {0}?', $game->id)]);
+                            echo $this->Form->postLink(__('Delete'), ['action' => 'delete', $game->id], ['class' => 'button'], ['confirm' => __('Are you sure you want to delete # {0}?', $game->id)]);
                         } else if ($loggedUser['role_id'] === 3) {
                             echo $this->Html->link(__('Buy'), ['action' => 'buy', $game->id], ['class' => 'button']);
                             echo ' ';

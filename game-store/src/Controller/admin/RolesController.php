@@ -1,7 +1,7 @@
 <?php
-namespace App\Controller;
+namespace App\Controller\Admin;
 
-use App\Controller\AppController;
+use App\Controller\Admin\AppController;
 
 /**
  * Roles Controller
@@ -14,22 +14,19 @@ class RolesController extends AppController
 {
     public function initialize() {
         parent::initialize();
-        // Set the layout.
-        $this->viewBuilder()->setLayout('monopage');
+        // Use the Bootstrap layout from the plugin.
+        // $this->viewBuilder()->setLayout('admin');
     }
 
     public $paginate = [
         'page' => 1,
-        'limit' => 5,
+        'limit' => 10,
         'maxLimit' => 150,
-        /*        'fields' => [
-          'id', 'name', 'description'
-          ],
-         */ 'sortWhitelist' => [
+        'sortWhitelist' => [
             'id', 'name', 'description'
         ]
     ];
-    
+
     /**
      * Index method
      *

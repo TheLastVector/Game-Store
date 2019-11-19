@@ -1,4 +1,4 @@
-<?php
+<!-- <?php
 /**
  * @var \App\View\AppView $this
  * @var \App\Model\Entity\Role[]|\Cake\Collection\CollectionInterface $roles
@@ -36,39 +36,84 @@
             echo '<li>' . $this->Html->link(__('List all users'), ['controller' => 'Users', 'action' => 'index']) . '</li>';
         ?>
     </ul>
-</nav>
-<div class="roles index large-9 medium-8 columns content">
-    <h3><?= __('Roles') ?></h3>
-    <table cellpadding="0" cellspacing="0">
-        <thead>
-            <tr>
-                <th scope="col"><?= $this->Paginator->sort('id') ?></th>
-                <th scope="col"><?= $this->Paginator->sort('name') ?></th>
-                <th scope="col" class="actions"><?= __('Actions') ?></th>
-            </tr>
-        </thead>
-        <tbody>
-            <?php foreach ($roles as $role): ?>
-            <tr>
-                <td><?= $this->Number->format($role->id) ?></td>
-                <td><?= h($role->name) ?></td>
-                <td class="actions">
-                    <?= $this->Html->link(__('View'), ['action' => 'view', $role->id]) ?>
-                    <?= $this->Html->link(__('Edit'), ['action' => 'edit', $role->id]) ?>
-                    <?= $this->Form->postLink(__('Delete'), ['action' => 'delete', $role->id], ['confirm' => __('Are you sure you want to delete # {0}?', $role->id)]) ?>
-                </td>
-            </tr>
-            <?php endforeach; ?>
-        </tbody>
-    </table>
-    <div class="paginator">
-        <ul class="pagination">
-            <?= $this->Paginator->first('<< ' . __('first')) ?>
-            <?= $this->Paginator->prev('< ' . __('previous')) ?>
-            <?= $this->Paginator->numbers() ?>
-            <?= $this->Paginator->next(__('next') . ' >') ?>
-            <?= $this->Paginator->last(__('last') . ' >>') ?>
-        </ul>
-        <p><?= $this->Paginator->counter(['format' => __('Page {{page}} of {{pages}}, showing {{current}} record(s) out of {{count}} total')]) ?></p>
+</nav> -->
+
+<?php
+    $urlToRestApi = $this->Url->build('/api/roles', true);
+    echo $this->Html->scriptBlock('var urlToRestApi = "' . $urlToRestApi . '";', ['block' => true]);
+    echo $this->Html->script('Roles/index', ['block' => 'scriptBottom']);
+?>
+
+<div class="container">
+    <div class="row">
+        <div class="panel panel-default roles-content">
+            <div class="panel-heading">Roles
+                <a href="javascript:void(0);" class="glyphicon glyphicon-plus" id="addLink" onclick="javascript:$('#addForm').slideToggle();">Add</a>
+            </div>
+            <div class="panel-body none formData" id="addForm">
+                <h2 id="actionLabel">Add Role</h2>
+
+                <form class="form" id="roleAddForm" enctype='application/json'>
+                    <div class="form-group">
+                        <label>Name</label>
+                        <input type="text" class="form-control" name="name" id="name"/>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Description</label>
+                        <input type="text" class="form-control" name="description" id="description"/>
+                    </div>
+
+                    <a href="javascript:void(0);" class="btn btn-success" onclick="roleAction('add')">Add Role</a>
+                    <a href="javascript:void(0);" class="btn btn-warning" onclick="$('#addForm').slideUp();">Cancel</a>
+                    <!-- input type="submit" class="btn btn-success" id="addButton" value="Add Role" -->
+                </form>
+            </div>
+
+            <div class="panel-body none formData" id="editForm">
+                <h2 id="actionLabel">Edit Role</h2>
+                <form class="form" id="roleEditForm" enctype='application/json'>
+                    <div class="form-group">
+                        <label>Name</label>
+                        <input type="text" class="form-control" name="name" id="nameEdit"/>
+                    </div>
+                    <div class="form-group">
+                        <label>Description</label>
+                        <input type="text" class="form-control" name="description" id="descriptionEdit"/>
+                    </div>
+                    <input type="hidden" class="form-control" name="id" id="idEdit"/>
+                    <a href="javascript:void(0);" class="btn btn-success" onclick="roleAction('edit')">Update Role</a>
+                    <a href="javascript:void(0);" class="btn btn-warning" onclick="$('#editForm').slideUp();">Cancel</a>
+                    <!-- input type="submit" class="btn btn-success" id="editButton" value="Update Role" -->
+                </form>
+            </div>
+            <table class="table table-striped">
+                <thead>
+                    <tr>
+                        <th></th>
+                        <th>Name</th>
+                        <th>Description</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+                <tbody id="roleData">
+                    <?php 
+                    $count = 0;
+                    foreach ($roles as $role): $count++;
+                        ?>
+                        <tr>
+                            <td><?php echo '#' . $count; ?></td>
+                            <td><?php echo $role['name']; ?></td>
+                            <td><?php echo $role['description']; ?></td>
+                            <td>
+                                <a href="javascript:void(0);" class="glyphicon glyphicon-edit" onclick="editRole('<?php echo $role['id']; ?>')"></a>
+                                <a href="javascript:void(0);" class="glyphicon glyphicon-trash" onclick="return confirm('Are you sure to delete data?') ? roleAction('delete', '<?php echo $role['id']; ?>') : false;"></a>
+                            </td>
+                        </tr>
+                        <?php
+                    endforeach; ?>
+                </tbody>
+            </table>
+        </div>
     </div>
 </div>

@@ -15,6 +15,9 @@ class UsersController extends AppController
     public function initialize()
     {
         parent::initialize();
+
+        $this->viewBuilder()->setLayout('default');
+
         $this->Auth->allow(['logout', 'signUp']);
         $this->Auth->deny(['index']);
     }
