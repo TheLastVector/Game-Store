@@ -1,14 +1,25 @@
 <?php $this->extend('/Layout/TwitterBootstrap/dashboard'); ?>
+
+<!-- Menu du côté gauche -->
 <?php $this->start('tb_actions'); ?>
-
-<li>
-    <?php 
-        echo '<li>' . $this->Html->link(__('Add a new role'), ['controller' => 'Roles', 'action' => 'add']) . '</li>';
-    ?>
-</li>
-
+    <li>
+        <?php 
+            echo '<li>' . $this->Html->link(__('Add a new role'), ['controller' => 'Roles', 'action' => 'add']) . '</li>';
+        ?>
+    </li>
 <?php $this->end(); ?>
-<?php $this->assign('tb_sidebar', '<ul class="nav nav-sidebar">' . $this->fetch('tb_actions') . '</ul>'); ?>
+
+<?php $this->start('tb_sidebar'); ?>
+    <div class="dropdown hidden-xs">
+        <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+            <?= __("Actions") ?>
+            <span class="caret"></span>
+        </button>
+        <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+            <?= $this->fetch('tb_actions') ?>
+        </ul>
+    </div>
+<?php $this->end(); ?>
 
 <table class="table table-striped" cellpadding="0" cellspacing="0">
     <thead>

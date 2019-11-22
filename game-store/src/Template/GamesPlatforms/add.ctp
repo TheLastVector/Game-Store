@@ -1,3 +1,5 @@
+<?php $this->extend('/Layout/default'); ?>
+
 <?php
     $urlToLinkedListFilter = $this->Url->build([
         "controller" => "Subplatforms",

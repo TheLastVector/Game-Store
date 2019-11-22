@@ -1,18 +1,13 @@
 <?php $this->extend('/Layout/TwitterBootstrap/dashboard'); ?>
 
+<!-- Menu du côté gauche -->
 <?php $this->start('tb_actions'); ?>
     <?php 
+        echo '<li>' . $this->Html->link(__('Edit'), ['controller' => 'Roles', 'action' => 'edit', $role->id]) . '</li>';
         echo '<li>' . $this->Html->link(__('Add a new role'), ['controller' => 'Roles', 'action' => 'add']) . '</li>';
         echo '<li>' . $this->Html->link(__('List all roles'), ['controller' => 'Roles', 'action' => 'index']) . '</li>';
+        echo '<li>' . $this->Html->link(__('Leave admin version'), ['prefix' => false, 'controller' => 'Roles', 'action' => 'index']) . '</li>';
     ?>
-    <li><?=
-        $this->Html->link('Section publique en JS', [
-            'prefix' => false,
-            'controller' => 'Roles',
-            'action' => 'index'
-        ]);
-        ?>
-    </li>
 <?php $this->end(); ?>
 
 <?php $this->start('tb_sidebar'); ?>

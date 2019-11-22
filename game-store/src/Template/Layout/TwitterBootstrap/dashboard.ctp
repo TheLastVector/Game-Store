@@ -6,6 +6,7 @@ $this->Html->css('BootstrapUI.dashboard', ['block' => true]);
 $this->prepend('tb_body_attrs', ' class="' . implode(' ', [$this->request->controller, $this->request->action]) . '" ');
 $this->start('tb_body_start');
 ?>
+
 <body <?= $this->fetch('tb_body_attrs') ?>>
     <div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
         <div class="container-fluid">
@@ -58,6 +59,13 @@ if (!$this->fetch('tb_flash')) {
 $this->end();
 
 $this->start('tb_body_end');
+
+$this->fetch('scriptLibraries');
+$this->fetch('script');
+$this->fetch('scriptBottom');
+
+echo 'Fetched';
+
 echo '</body>';
 $this->end();
 

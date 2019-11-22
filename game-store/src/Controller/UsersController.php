@@ -52,6 +52,9 @@ class UsersController extends AppController
             if ($user) {
                 $this->Auth->setUser($user);
 
+                debug($_SERVER['HTTP_REFERER']);
+                die();
+
                 return $this->redirect(['controller' => 'Users' , 'action' => 'view', $user['id']]);
                 /*return $this->redirect($this->Auth->redirectUrl());*/
             }

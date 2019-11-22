@@ -1,4 +1,4 @@
-<?php $this->extend('/Layout/TwitterBootstrap/dashboard'); ?>
+<?php $this->extend('/Layout/default'); ?>
 
 <?php
 $urlToGamesAutocompleteJson = $this->Url->build([
