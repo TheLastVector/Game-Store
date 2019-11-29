@@ -22,6 +22,8 @@ class FilesController extends AppController
         $files = $this->paginate($this->Files);
 
         $this->set(compact('files'));
+
+        $this->set('_serialize', ['files']);
     }
 
     /**
@@ -38,6 +40,7 @@ class FilesController extends AppController
         ]);
 
         $this->set('file', $file);
+        $this->set('_serialize', ['files']);
     }
 
     /**
@@ -47,21 +50,8 @@ class FilesController extends AppController
      */
     public function add()
     {
-        /*$file = $this->Files->newEntity();
-        if ($this->request->is('post')) {
-            $file = $this->Files->patchEntity($file, $this->request->getData());
-            if ($this->Files->save($file)) {
-                $this->Flash->success(__('The file has been saved.'));
-
-                return $this->redirect(['action' => 'index']);
-            }
-            $this->Flash->error(__('The file could not be saved. Please, try again.'));
-        }
-        $games = $this->Files->Games->find('list', ['limit' => 200]);
-        $this->set(compact('file', 'games'));*/
-
         $file = $this->Files->newEntity();
-        if ($this->request->is('post')) {
+        if ($this->request->is('post') && !$this->request->is('ajax')) {
             if (!empty($this->request->data['name']['name'])) {
                 $fileName = $this->request->data['name']['name'];
                 $uploadPath = 'Files/';
@@ -81,9 +71,30 @@ class FilesController extends AppController
             } else {
                 $this->Flash->error(__('Please choose a file to upload.'));
             }
+        } else if ($this->request->is('ajax')) {
+            if (!empty($this->request->data['file']['name'])) {
+                $fileName = $this->request->data['file']['name'];
+                $uploadPath = 'Files/';
+                $uploadFile = $uploadPath . $fileName;
+                if (move_uploaded_file($this->request->data['file']['tmp_name'], 'img/' . $uploadFile)) {
+                    $file = $this->Files->patchEntity($file, $this->request->getData());
+                    $file->name = $fileName;
+                    $file->path = $uploadPath;
+                    if ($this->Files->save($file)) {
+                        $this->Flash->success(__('File has been uploaded and inserted successfully.'));
+                    } else {
+                        $this->Flash->error(__('Unable to upload file, please try again.'));
+                    }
+                } else {
+                    $this->Flash->error(__('Unable to save file, please try again.'));
+                }
+            } else {
+                $this->Flash->error(__('Please choose a file to upload.'));
+            }
         }
         $games = $this->Files->Games->find('list', ['limit' => 200]);
         $this->set(compact('file', 'games'));
+        $this->set('_serialize', ['file']);
     }
 
     /**

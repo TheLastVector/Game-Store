@@ -4,6 +4,18 @@
  * @var \App\Model\Entity\File[]|\Cake\Collection\CollectionInterface $files
  */
 ?>
+
+<?php
+    $urlRedirectToIndex = $this->Url->build([
+        "controller" => "Files",
+        "action" => "index"
+            ]);
+    echo $this->Html->scriptBlock('var urlRedirectToIndex = "' . $urlRedirectToIndex . '";', ['block' => true]);
+    echo $this->Html->css('dropzone/dropzone.min');
+    echo $this->Html->script('dropzone/dropzone', ['block' => 'scriptLibraries']);
+    echo $this->Html->script('dropzone/RedirectToIndex', ['block' => 'scriptBottom']);
+?>
+
 <nav class="large-3 medium-4 columns" id="actions-sidebar">
     <ul class="side-nav">
         <li class="heading"><?= __('Menu') ?></li>
@@ -13,10 +25,27 @@
 </nav>
 <div class="files index large-9 medium-8 columns content">
     <h3><?= __('Files') ?></h3>
+
+    <?php
+        echo $this->Form->create('image', [
+            'url' => ['controller' => 'Files',
+                'action' => 'add'
+            ],
+            'method' => 'post',
+            'id' => 'my-awesome-dropzone',
+            'class' => 'dropzone',
+            'type' => 'file',
+            'autocomplete' => 'off'
+        ]);
+    ?>
+
+    <div class="dz-message" data-dz-message><h5>(<?= __('Drop files here to upload') ?>)</h5></div>
+
     <table cellpadding="0" cellspacing="0">
         <thead>
             <tr>
-                <th scope="col"><?= $this->Paginator->sort('id') ?></th>
+                <!-- <th scope="col"><?= $this->Paginator->sort('id') ?></th> -->
+                <th scope="col"><?= __('File name') ?></th>
                 <th scope="col"><?= __('Preview') ?></th>
                 <!-- <th scope="col"><?= $this->Paginator->sort('name') ?></th>
                 <th scope="col"><?= $this->Paginator->sort('path') ?></th> -->
@@ -29,7 +58,7 @@
         <tbody>
             <?php foreach ($files as $file): ?>
             <tr>
-                <td><?= $this->Number->format($file->id) ?></td>
+                <td><?= h($file->name) ?>
                 <td>
                         <?php
                         echo $this->Html->image($file->path . $file->name, [
