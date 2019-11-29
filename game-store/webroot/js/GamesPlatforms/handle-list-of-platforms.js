@@ -1,4 +1,4 @@
-$(document).ready(function () {
+/* $(document).ready(function () {
     // The path to action from CakePHP is in urlToLinkedListFilter 
     $('#platform-id').on('change', function () {
         var platformId = $(this).val();
@@ -20,5 +20,14 @@ $(document).ready(function () {
         } else {
             $('#subplatform-id').html('<option value="">Select Platform first</option>');
         }
+    });
+}); */
+
+var app = angular.module('linkedlists', []);
+
+app.controller('gamesPlatformsController', function ($scope, $http) {
+    // l'url vient de add.ctp
+    $http.get(urlToLinkedListFilter).then(function (response) {
+        $scope.platforms = response.data;
     });
 });

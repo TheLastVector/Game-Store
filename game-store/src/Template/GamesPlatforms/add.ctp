@@ -1,7 +1,7 @@
 <?php
     $urlToLinkedListFilter = $this->Url->build([
-        "controller" => "Subplatforms",
-        "action" => "getByPlatform",
+        "controller" => "Platforms",
+        "action" => "getPlatforms",
         "_ext" => "json"
     ]);
     echo $this->Html->scriptBlock('var urlToLinkedListFilter = "' . $urlToLinkedListFilter . '";', ['block' => true]);
@@ -51,15 +51,34 @@
         ?>
     </ul>
 </nav>
-<div class="gamesPlatforms form large-9 medium-8 columns content">
+<div class="gamesPlatforms form large-9 medium-8 columns content" ng-app="linkedlists" ng-controller="gamesPlatformsController">
     <?= $this->Form->create($gamesPlatform) ?>
     <fieldset>
         <legend><?= __('Add Games Platform') ?></legend>
         <?php
             echo $this->Form->control('game_id', ['options' => $games]);
+        ?>
+        <!-- <?php 
             echo $this->Form->control('platform_id', ['options' => $platforms]);
             echo $this->Form->control('subplatform_id', ['option' => $subplatforms]);
-        ?>
+        ?> -->
+        <select 
+            name="platform_id"
+            id="platform-id" 
+            ng-model="platform" 
+            ng-options="platform.name for platform in platforms track by platform.id"
+        >
+            <option value=''>Select</option>
+        </select>
+        <select 
+            name="subplatform_id"
+            id="subplatform-id" 
+            ng-disabled="!platform"
+            ng-model="subplatform"
+            ng-options="subplatform.name for subplatform in platform.subplatforms track by subplatform.id"
+        >
+            <option value=''>Select</option>
+        </select>
     </fieldset>
     <?= $this->Form->button(__('Submit')) ?>
     <?= $this->Form->end() ?>

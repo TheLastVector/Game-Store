@@ -12,6 +12,18 @@ use App\Controller\AppController;
  */
 class PlatformsController extends AppController
 {
+    public function getPlatforms() {
+        $this->autoRender = false; // avoid to render view
+
+        $platforms = $this->Platforms->find('all', [
+            'contain' => ['Subplatforms'],
+        ]);
+
+        $platformsJ = json_encode($platforms);
+        $this->response->type('json');
+        $this->response->body($platformsJ);
+    }
+
     /**
      * Index method
      *
@@ -113,13 +125,13 @@ class PlatformsController extends AppController
 
         // Administrator
         if ($user['role_id'] === 1) {
-            if (in_array($action, ['index', 'view', 'add', 'edit', 'delete'])) {
+            if (in_array($action, ['index', 'view', 'add', 'edit', 'delete', 'getPlatforms'])) {
                 return true;
             }
         }
         // Staff 
         else if ($user['role_id'] === 2) {
-            if (in_array($action, ['index', 'view', 'add', 'edit', 'delete'])) {
+            if (in_array($action, ['index', 'view', 'add', 'edit', 'delete', 'getPlatforms'])) {
                 return true;
             }
         }

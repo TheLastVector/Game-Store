@@ -66,7 +66,7 @@ class GamesPlatformsController extends AppController
 
         // Bâtir la liste des plateformes
         $this->loadModel('Platforms');
-        $platforms = $this->GamesPlatforms->Platforms->find('list', ['limit' => 200]);
+        $platforms = $this->Platforms->find('list', ['limit' => 200]);
 
         // Extraire l'id de la première plateforme
         $platforms = $platforms->toArray();
@@ -76,6 +76,7 @@ class GamesPlatformsController extends AppController
         $subplatforms = $this->Platforms->Subplatforms->find('list', ['conditions' => ['Subplatforms.platform_id' => $platform_id]]);
 
         $this->set(compact('gamesPlatform', 'games', 'platforms', 'subplatforms'));
+        $this->set('_serialize', ['gamesPlatform', 'games', 'platforms', 'subplatforms']);
     }
 
     /**
