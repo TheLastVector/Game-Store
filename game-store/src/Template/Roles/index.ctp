@@ -37,7 +37,7 @@
         ?>
     </ul>
 </nav>
-<div class="roles index large-9 medium-8 columns content">
+<!-- <div class="roles index large-9 medium-8 columns content">
     <h3><?= __('Roles') ?></h3>
     <table cellpadding="0" cellspacing="0">
         <thead>
@@ -71,4 +71,66 @@
         </ul>
         <p><?= $this->Paginator->counter(['format' => __('Page {{page}} of {{pages}}, showing {{current}} record(s) out of {{count}} total')]) ?></p>
     </div>
+</div> -->
+
+<div class="roles index large-9 medium-8 columns content">
+    <?php
+        $urlToRestApi = $this->Url->build(
+            [
+                'prefix' => 'api',
+                'controller' => 'Roles'
+            ], 
+            true
+        );
+        echo $this->Html->scriptBlock('var urlToRestApi = "' . $urlToRestApi . '";', ['block' => true]);
+        echo $this->Html->script('Roles/index', ['block' => 'scriptBottom']);
+    ?>
+
+    <div  ng-app="app" ng-controller="RoleCRUDCtrl">
+        <table>
+            <!-- <tr>
+                <td width="100">ID:</td>
+                <td><input type="text" id="id" ng-model="role.id" /></td>
+            </tr> -->
+            <tr>
+                <td width="100">Name:</td>
+                <td><input type="text" id="name" ng-model="role.name" /></td>
+            </tr>
+            <tr>
+                <td width="100">Description:</td>
+                <td><input type="text" id="description" ng-model="role.description" /></td>
+            </tr>
+        </table>
+        <br /> <br /> 
+        <!-- <a ng-click="getRole(role.id)">Get Role</a>  -->
+        <a ng-click="updateRole(role.id, role.name, role.description)">Update Role</a> 
+        <a ng-click="addRole(role.name, role.description)">Add Role</a> 
+        <!-- <a ng-click="deleteRole(role.id)">Delete Role</a> -->
+
+        <br /> <br />
+        <p style="color: green">{{message}}</p>
+        <p style="color: red">{{errorMessage}}</p>
+        
+        <table style="width:100%" ng-init = "getAllRoles()">
+            <tr>
+                <th>ID</th>
+                <th>Name</th> 
+                <th>Description</th>
+                <th>Actions</th>
+            </tr>
+            <tr ng-repeat="role in roles">
+                <td>{{role.id}}</td>
+                <td>{{role.name}}</td>
+                <td>{{role.description}}</td>
+                <td><a ng-click="getRole(role.id)">[Edit]</a> | <a ng-click="deleteRole(role.id)">[Delete]</a></td>
+            </tr>
+        </table> 
+
+        <!-- <div ng-repeat="role in roles">
+            {{role.id}} {{role.name}} {{role.description}}
+        </div> -->
+        <!-- pre ng-show='roles'>{{roles | json }}</pre-->
+    </div>
 </div>
+
+

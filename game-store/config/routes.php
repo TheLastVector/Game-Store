@@ -18,6 +18,7 @@
  * @license       https://opensource.org/licenses/mit-license.php MIT License
  */
 use Cake\Http\Middleware\CsrfProtectionMiddleware;
+use Cake\Core\Plugin;
 use Cake\Routing\RouteBuilder;
 use Cake\Routing\Router;
 use Cake\Routing\Route\DashedRoute;
@@ -46,6 +47,14 @@ Router::extensions(['json', 'xml']);
  *
  */
 Router::defaultRouteClass(DashedRoute::class);
+
+Router::prefix('api', function ($routes) {
+    $routes->extensions(['json', 'xml']);
+    $routes->resources('Roles');
+    $routes->resources('Users');
+    Router::connect('/api/users/register', ['controller' => 'Users', 'action' => 'add', 'prefix' => 'api']);
+    $routes->fallbacks('InflectedRoute');
+});
 
 Router::scope('/', function (RouteBuilder $routes) {
     // Register scoped middleware for in scopes.
@@ -92,6 +101,12 @@ Router::scope('/', function (RouteBuilder $routes) {
      */
     $routes->fallbacks(DashedRoute::class);
 });
+
+/**
+ * Load all plugin routes. See the Plugin documentation on
+ * how to customize the loading of plugin routes.
+ */
+Plugin::routes();
 
 /**
  * If you need a different set of middleware or none at all,
