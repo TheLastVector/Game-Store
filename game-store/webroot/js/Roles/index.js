@@ -9,6 +9,7 @@ app.controller(
                     function success(response) {
                         $scope.message = 'Role data updated!';
                         $scope.errorMessage = '';
+                        $scope.getAllRoles();
                     },
                     function error(response) {
                         $scope.errorMessage = 'Error updating role!';
@@ -18,7 +19,6 @@ app.controller(
             }
 
             $scope.getRole = function (id) {
-                //var id = $scope.role.id;
                 RoleCRUDService.getRole(id).then(
                     function success(response) {
                         $scope.role = response.data.data;
@@ -43,6 +43,7 @@ app.controller(
                         function success(response) {
                             $scope.message = 'Role added!';
                             $scope.errorMessage = '';
+                            $scope.getAllRoles();
                         },
                         function error(response) {
                             $scope.errorMessage = 'Error adding role!';
@@ -61,19 +62,20 @@ app.controller(
                         $scope.message = 'Role deleted!';
                         $scope.role = null;
                         $scope.errorMessage = '';
+                        $scope.getAllRoles();
                     },
                     function error(response) {
                         $scope.errorMessage = 'Error deleting role!';
                         $scope.message = '';
                     }
-                )
+                );
             }
 
             $scope.getAllRoles = function () {
                 RoleCRUDService.getAllRoles().then(
                     function success(response) {
                         $scope.roles = response.data.data;
-                        $scope.message = '';
+                        $scope.message = 'Table was updated';
                         $scope.errorMessage = '';
                     },
                     function error(response) {
@@ -95,7 +97,8 @@ app.service(
                     {
                         method: 'GET',
                         url: urlToRestApi + '/' + roleId,
-                        headers: { 'X-Requested-With' : 'XMLHttpRequest',
+                        headers: { 
+                            'X-Requested-With' : 'XMLHttpRequest',
                             'Accept' : 'application/json'
                         }
                     }
@@ -107,8 +110,12 @@ app.service(
                     {
                         method: 'POST',
                         url: urlToRestApi,
-                        data: {name: name, description: description},
-                        headers: { 'X-Requested-With' : 'XMLHttpRequest',
+                        data: {
+                            name: name, 
+                            description: description
+                        },
+                        headers: { 
+                            'X-Requested-With' : 'XMLHttpRequest',
                             'Accept' : 'application/json'
                         }
                     }
@@ -120,7 +127,8 @@ app.service(
                     {
                         method: 'DELETE',
                         url: urlToRestApi + '/' + id,
-                        headers: { 'X-Requested-With' : 'XMLHttpRequest',
+                        headers: { 
+                            'X-Requested-With' : 'XMLHttpRequest',
                             'Accept' : 'application/json'
                         }
                     }
@@ -133,8 +141,9 @@ app.service(
                         method: 'PATCH',
                         url: urlToRestApi + '/' + id,
                         data: {name: name, description: description},
-                        headers: { 'X-Requested-With' : 'XMLHttpRequest',
-                                'Accept' : 'application/json'
+                        headers: { 
+                            'X-Requested-With' : 'XMLHttpRequest',
+                            'Accept' : 'application/json'
                         }
                     }
                 )
@@ -144,7 +153,8 @@ app.service(
                 return $http({
                     method: 'GET',
                     url: urlToRestApi,
-                    headers: { 'X-Requested-With' : 'XMLHttpRequest',
+                    headers: { 
+                        'X-Requested-With' : 'XMLHttpRequest',
                         'Accept' : 'application/json'
                     }
                 });

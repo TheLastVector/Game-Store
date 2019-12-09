@@ -101,17 +101,13 @@
                 <td><input type="text" id="description" ng-model="role.description" /></td>
             </tr>
         </table>
-        <br /> <br /> 
-        <!-- <a ng-click="getRole(role.id)">Get Role</a>  -->
         <a ng-click="updateRole(role.id, role.name, role.description)">Update Role</a> 
-        <a ng-click="addRole(role.name, role.description)">Add Role</a> 
-        <!-- <a ng-click="deleteRole(role.id)">Delete Role</a> -->
-
-        <br /> <br />
+        <a ng-click="addRole(role.name, role.description)">Add Role</a>
+        
         <p style="color: green">{{message}}</p>
         <p style="color: red">{{errorMessage}}</p>
         
-        <table style="width:100%" ng-init = "getAllRoles()">
+        <table style="width:100%" ng-init="getAllRoles()">
             <tr>
                 <th>ID</th>
                 <th>Name</th> 
@@ -125,11 +121,6 @@
                 <td><a ng-click="getRole(role.id)">[Edit]</a> | <a ng-click="deleteRole(role.id)">[Delete]</a></td>
             </tr>
         </table> 
-
-        <!-- <div ng-repeat="role in roles">
-            {{role.id}} {{role.name}} {{role.description}}
-        </div> -->
-        <!-- pre ng-show='roles'>{{roles | json }}</pre-->
     </div>
 </div>
 

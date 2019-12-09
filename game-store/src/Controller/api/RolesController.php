@@ -10,10 +10,7 @@ class RolesController extends AppController {
         'page' => 1,
         'limit' => 100,
         'maxLimit' => 150,
-/*        'fields' => [
-            'id', 'name', 'description'
-        ],
-*/        'sortWhitelist' => [
+        'sortWhitelist' => [
             'id', 'name', 'description'
         ]
     ];
