@@ -88,10 +88,6 @@
 
     <div  ng-app="app" ng-controller="RoleCRUDCtrl">
         <table>
-            <!-- <tr>
-                <td width="100">ID:</td>
-                <td><input type="text" id="id" ng-model="role.id" /></td>
-            </tr> -->
             <tr>
                 <td width="100">Name:</td>
                 <td><input type="text" id="name" ng-model="role.name" /></td>
@@ -101,8 +97,9 @@
                 <td><input type="text" id="description" ng-model="role.description" /></td>
             </tr>
         </table>
-        <a ng-click="updateRole(role.id, role.name, role.description)">Update Role</a> 
-        <a ng-click="addRole(role.name, role.description)">Add Role</a>
+
+        <button type="button" ng-click="addRole(role.name, role.description)">Add Role</button>
+        <button type="button" ng-click="updateRole(role.id, role.name, role.description)">Update Role</button>
         
         <p style="color: green">{{message}}</p>
         <p style="color: red">{{errorMessage}}</p>
@@ -110,7 +107,7 @@
         <table style="width:100%" ng-init="getAllRoles()">
             <tr>
                 <th>ID</th>
-                <th>Name</th> 
+                <th>Name</th>
                 <th>Description</th>
                 <th>Actions</th>
             </tr>
@@ -123,5 +120,3 @@
         </table> 
     </div>
 </div>
-
-

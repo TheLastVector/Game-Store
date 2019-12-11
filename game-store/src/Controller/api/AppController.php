@@ -12,39 +12,21 @@ class AppController extends Controller {
     public function initialize() {
         parent::initialize();
         $this->loadComponent('RequestHandler');
-        $this->loadComponent('Crud.Crud', [
-            'actions' => [
-                'Crud.Index',
-                'Crud.View',
-                'Crud.Add',
-                'Crud.Edit',
-                'Crud.Delete'
-            ],
-            'listeners' => [
-                'Crud.Api',
-                'Crud.ApiPagination',
-                'Crud.ApiQueryLog'
-            ]
-        ]);
-/*        $this->loadComponent('Auth', [
-            'storage' => 'Memory',
-            'authenticate' => [
-                'Form' => [
-                    'scope' => ['Users.active' => 1]
+        $this->loadComponent(
+            'Crud.Crud', [
+                'actions' => [
+                    'Crud.Index',
+                    'Crud.View',
+                    'Crud.Add',
+                    'Crud.Edit',
+                    'Crud.Delete'
                 ],
-                'ADmad/JwtAuth.Jwt' => [
-                    'parameter' => 'token',
-                    'userModel' => 'Users',
-                    'scope' => ['Users.active' => 1],
-                    'fields' => [
-                        'username' => 'id'
-                    ],
-                    'queryDatasource' => true
+                'listeners' => [
+                    'Crud.Api',
+                    'Crud.ApiPagination',
+                    'Crud.ApiQueryLog'
                 ]
-            ],
-            'unauthorizedRedirect' => false,
-            'checkAuthIn' => 'Controller.initialize'
-        ]);
-*/    }
-
+            ]
+        );
+    }
 }

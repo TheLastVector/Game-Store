@@ -75,7 +75,7 @@ app.controller(
                 RoleCRUDService.getAllRoles().then(
                     function success(response) {
                         $scope.roles = response.data.data;
-                        $scope.message = 'Table was updated';
+                        $scope.message = '';
                         $scope.errorMessage = '';
                     },
                     function error(response) {
@@ -162,5 +162,3 @@ app.service(
         }
     ]
 );
-
-
