@@ -14,5 +14,4 @@ class RolesController extends AppController {
             'id', 'name', 'description'
         ]
     ];
-
 }
