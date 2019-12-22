@@ -32,7 +32,15 @@
         <br>
         Pour éditer un item du tableau, il faut tout d'abord cliquer sur l'action "[Edit]" de l'item et après avoir apporté des changements cliquer sur le bouton "Update Role"
         <hr>
-        <u>Captcha et cliquer-glisser d'images :</u>
+        <u>Captcha :</u>
+        <br>
+        1- Cliquer sur [ENG : <span style="color: RED">List all languages</span> | FR : <span style="color: RED">Lister toutes les langues</span>]
+        <br>
+        2- Entrer le nom d'utilisateur "admin" et le mot de passe "test"
+        3- Changez le mot de passe puis essayez l'étape "2-" à nouveau
+        <br>
+        <hr>
+        <u>Cliquer-glisser d'images :</u>
         <br>
         1- Cliquer sur [ENG : <span style="color: RED">List all files</span> | FR : <span style="color: RED">List all files</span>]
         <br>
