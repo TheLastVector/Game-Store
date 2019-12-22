@@ -19,6 +19,9 @@ $cakeDescription = 'CakePHP: the rapid development php framework';
 <html>
 <head>
     <script src = "https://ajax.googleapis.com/ajax/libs/angularjs/1.5.2/angular.min.js"></script>
+    <script src='https://www.google.com/recaptcha/api.js'></script>
+    <script src='https://www.google.com/recaptcha/api.js?onload=onloadCallback&render=explicit'></script>
+    
 
     <?= $this->Html->charset() ?>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -35,7 +38,8 @@ $cakeDescription = 'CakePHP: the rapid development php framework';
         echo $this->Html->css([
             'base.css',
             'style.css',
-            'https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css'
+            'https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css',
+            'materialize/css/materialize.min.css'
         ]);
     ?>
 
@@ -45,7 +49,8 @@ $cakeDescription = 'CakePHP: the rapid development php framework';
     <?php
         echo $this->Html->script([
             'https://code.jquery.com/jquery-1.12.4.js',
-            'https://code.jquery.com/ui/1.12.1/jquery-ui.js'
+            'https://code.jquery.com/ui/1.12.1/jquery-ui.js',
+            'materialize.min'
                 ], ['block' => 'scriptLibraries']
         );
     ?>

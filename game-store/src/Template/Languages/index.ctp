@@ -38,6 +38,60 @@
     </ul>
 </nav>
 <div class="languages index large-9 medium-8 columns content">
+    <?php $this->Html->script('Languages/index', ['block' => 'scriptBottom']); ?>
+
+    <div ng-app="Captcha">
+        <div class="container" ng-controller="loginCtrl" class="d-inline-block align-top-right">
+            <!-- floating button for login -->
+            <!-- <div id="login-btn" class="fixed-action-btn" style="top:45px; right:24px;">
+                <a class="waves-effect waves-light btn margin-bottom-1em modal-trigger red" href="#modal-login-form"><i class="material-icons left">account_box</i>Login</a>
+            </div> -->
+            <!-- modal for user login -->
+            <!-- <div id="modal-login-form" class="modal"> -->
+                <div class="modal-content">
+                    <div id="captcha"></div> 
+                    <p style="color:red;">{{ captcha_status}}</p>
+                    <h4 id="modal-login-title">Login</h4>
+                    <div class="row">
+                        <div class="input-field col s12">
+                            <input ng-model="username" type="text" class="validate" id="username" name="username" />
+                            <label for="username">Username</label>
+                        </div>
+                        <div class="input-field col s12">
+                            <input ng-model="password" type="password" class="validate" id="password" name="password" />
+                            <label for="password">Password</label>
+                        </div>
+                        <div class="input-field col s12">
+                            <a id="btn-create-login" class="waves-effect waves-light btn margin-bottom-1em" ng-click="login()"><i class="material-icons left">add</i>Login</a>
+                            <a class="modal-action modal-close waves-effect waves-light btn margin-bottom-1em"><i class="material-icons left">close</i>Close</a>
+                        </div>
+                    </div>
+                </div>
+            <!-- </div> -->
+            <!-- floating button for logout/change password -->
+            <!-- <div id="logout-btn" class="fixed-action-btn" style="top:45px; right:24px;">
+                <a class="waves-effect waves-light btn margin-bottom-1em modal-trigger red" href="#modal-logout-form"><i class="material-icons left">eject</i>Logout (Change Password)</a>
+            </div> -->
+            <!-- modal for user login -->
+            <!-- <div id="modal-logout-form" class="modal"> -->
+                <div class="modal-content">
+                    <h4 id="modal-login-title">Logout or Change Password</h4>
+                    <div class="row">
+                        <div class="input-field col s12">
+                            <input ng-model="newPassword" type="password" class="validate" id="form-password" />
+                            <label for="password">New Password</label>
+                        </div>                    
+                        <div class="input-field col s12">
+                            <a id="btn-create-login" class="waves-effect waves-light btn margin-bottom-1em" ng-click="changePassword()"><i class="material-icons left">autorenew</i>Change Password</a>
+                            <a id="btn-create-login" class="waves-effect waves-light btn margin-bottom-1em" ng-click="logout()"><i class="material-icons left">eject</i>Logout</a>
+                            <a class="modal-action modal-close waves-effect waves-light btn margin-bottom-1em"><i class="material-icons left">close</i>Close</a>
+                        </div>
+                    </div>
+                </div>
+            <!-- </div> -->
+        </div>
+    </div>
+
     <h3><?= __('Languages') ?></h3>
     <table cellpadding="0" cellspacing="0">
         <thead>

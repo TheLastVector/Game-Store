@@ -123,9 +123,17 @@ class LanguagesController extends AppController
         }
         // Client
         else if ($user['role_id'] === 3) { 
-            return false;
+            if (in_array($action, ['index', 'view'])) {
+                return true;
+            } else {
+                return false;
+            }
         }else {
-            return false;
+            if (in_array($action, ['index', 'view'])) {
+                return true;
+            } else {
+                return false;
+            }
         }
 
         return false;
