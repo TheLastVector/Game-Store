@@ -39,7 +39,6 @@ $cakeDescription = 'CakePHP: the rapid development php framework';
             'base.css',
             'style.css',
             'https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css',
-            'materialize/css/materialize.min.css'
         ]);
     ?>
 

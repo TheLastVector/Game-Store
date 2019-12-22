@@ -4,6 +4,13 @@
  * @var \App\Model\Entity\Language[]|\Cake\Collection\CollectionInterface $languages
  */
 ?>
+
+<?php
+    echo $this->Html->css([
+        'materialize/css/materialize.min.css'
+    ]);
+?>
+
 <nav class="large-3 medium-4 columns" id="actions-sidebar">
     <ul class="side-nav">
         <li class="heading"><?= __('Menu') ?></li>
